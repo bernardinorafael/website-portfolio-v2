@@ -1,7 +1,7 @@
 import Head from "next/head"
 import Image from "next/image"
-import * as Icon from "phosphor-react"
 import Link from "next/link"
+import * as Icon from "phosphor-react"
 import Title from "../components/Title"
 import { Container, Project, ProjectsContainer } from "../css/pages/home"
 
@@ -9,7 +9,7 @@ function Home() {
   return (
     <>
       <Head>
-        <title>Home | Rafael Bernardino</title>
+        <title>Início | Rafael Bernardino</title>
       </Head>
 
       <Container>
@@ -73,7 +73,7 @@ function Home() {
             </Project>
           </ProjectsContainer>
 
-          <Link href="#">
+          <Link href="/projects">
             Ver mais projetos
             <Icon.ArrowRight />
           </Link>

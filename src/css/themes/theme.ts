@@ -1,5 +1,7 @@
 export const theme = {
   colors: {
+    white: "#fff",
+
     gray: {
       100: "#E1E1E6",
       300: "#C4C4CC",
@@ -18,18 +20,24 @@ export const theme = {
     },
 
     violet: {
+      50: "#9d4edd20",
+      100: "#9d4edd50",
       300: "#9d4edd",
       500: "#7b2cbf",
       700: "#5a189a",
     },
 
     green: {
+      50: "#00B37E20",
+      100: "#00B37E50",
       300: "#00B37E",
       500: "#00875F",
       700: "#015F43",
     },
 
     red: {
+      50: "#F75A6820",
+      100: "#F75A6850",
       300: "#F75A68",
       500: "#AB222E",
       700: "#7A1921",
@@ -43,17 +51,19 @@ export const theme = {
     md: "1rem",
     lg: "1.125rem",
     xl: "1.25rem",
-    "2xl": "1.5rem",
-    "4xl": "2rem",
-    "5xl": "2.25rem",
-    "6xl": "3rem",
-    "7xl": "4rem",
-    "8xl": "4.5rem",
-    "9xl": "6rem",
-    "10xl": "10rem",
+    xxl: "1.5rem",
+    xxxl: "2rem",
+    xxxxl: "2.5rem",
+    xxxxxl: "3rem",
+  },
+
+  fontFamily: {
+    default: "IBM Plex Sans, sans-serif",
+    mono: "IBM Plex Mono, monospace",
   },
 
   fontWeight: {
+    thin: "300",
     regular: "400",
     semibold: "600",
     bold: "700",

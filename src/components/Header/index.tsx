@@ -1,20 +1,26 @@
 import Image from "next/image"
-import { ButtonToggleTheme, Container } from "./styles"
-import * as Icon from "phosphor-react"
 import Link from "next/link"
+import * as Icon from "phosphor-react"
+import { ButtonToggleTheme, Container } from "./styles"
 
 export function Header() {
   return (
     <Container>
       <div>
-        <Image src="/images/imagem-main-perfil.png" height={36} width={36} alt="" />
+        <Link href="/">
+          <Image src="/images/header-image.png" height={36} width={36} alt="" />
+        </Link>
 
         <nav>
-          <Link href="#">Sobre mim</Link>
-          <Link href="#">Apps</Link>
+          <Link href="/about">Sobre mim</Link>
+          <Link href="/apps">Apps</Link>
 
           <ButtonToggleTheme>
             <Icon.User size={20} weight="duotone" />
+          </ButtonToggleTheme>
+
+          <ButtonToggleTheme>
+            <Icon.DotsThreeOutlineVertical size={20} weight="duotone" />
           </ButtonToggleTheme>
         </nav>
 

@@ -7,12 +7,19 @@ export const GlobalStyle = createGlobalStyle`
 		padding: 0;
 	}
 
+	&:focus {
+		box-shadow: 0 0 0 3px ${({ theme }) => theme.colors.cyan[500]};
+		outline: none;
+	}
+	
 	body {
 		background: ${({ theme }) => theme.colors.gray[900]};
 		color: ${({ theme }) => theme.colors.gray[100]};
+		-webkit-font-smoothing: antialiased;
 	}
 	
 	body, input, select, textarea, button {
+		font-family: ${({ theme }) => theme.fontFamily.default};
 		font-size: ${({ theme }) => theme.fontSize.md};
 		font-weight: ${({ theme }) => theme.fontWeight.regular};
 	}
@@ -31,6 +38,7 @@ export const GlobalStyle = createGlobalStyle`
 			font-size: 93.75%;
 		}
 	}
+	
 	@media (max-width: 768px) {
 		html {
 			font-size: 87.5%;

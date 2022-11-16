@@ -1,57 +1,31 @@
 import styled from "styled-components"
 
 export const Container = styled.main`
-  margin: 8rem auto 4rem;
+  display: flex;
+  flex-direction: column;
+  margin: 8rem auto 2rem;
   max-width: 780px;
   padding: 0 2rem;
-  width: 100%;
 
-  > section {
-    display: flex;
-    flex-direction: column;
-
-    & + section {
-      margin-top: 2rem;
-    }
-
-    strong {
-      align-self: flex-start;
-    }
-
-    p {
-      color: ${({ theme }) => theme.colors.gray[300]};
-      font-size: ${({ theme }) => theme.fontSize.xl};
-      font-weight: ${({ theme }) => theme.fontWeight.thin};
-      text-align: justify;
-    }
+  strong {
+    align-self: center;
   }
 
-  section:last-child {
-    > a {
-      align-items: center;
-      align-self: flex-start;
-      border: none;
-      color: ${({ theme }) => theme.colors.gray[400]};
-      display: flex;
-      flex: 1;
-      gap: 0.225rem;
-      margin-top: 2rem;
-      outline: none;
-      padding: 0.225rem;
-
-      &:hover {
-        border-bottom: 1px solid ${({ theme }) => theme.colors.gray[300]};
-        color: ${({ theme }) => theme.colors.gray[300]};
-        filter: brightness(1.1);
-      }
-    }
+  p {
+    align-self: center;
+    color: ${({ theme }) => theme.colors.gray[300]};
+    font-size: ${({ theme }) => theme.fontSize.xl};
+    font-weight: ${({ theme }) => theme.fontWeight.thin};
+    text-align: center;
+    user-select: none;
   }
-`
 
-export const ProjectsContainer = styled.section`
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: 1fr 1fr 1fr;
+  section {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 3rem;
+  }
 `
 
 export const Project = styled.div`
@@ -84,6 +58,7 @@ export const Project = styled.div`
     box-shadow: 4px 6px 20px -8px rgb(0 0 0 / 75%);
 
     strong {
+      align-self: flex-start;
       font-size: ${({ theme }) => theme.fontSize.xl};
     }
 

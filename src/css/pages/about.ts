@@ -1,8 +1,8 @@
-import styled, { keyframes } from "styled-components"
 import * as Accordion from "@radix-ui/react-accordion"
+import styled, { keyframes } from "styled-components"
 
 export const Container = styled.main`
-  margin: 8rem auto 4rem;
+  margin: 8rem auto 2rem;
   max-width: 780px;
   padding: 0 2rem;
   width: 100%;
@@ -11,6 +11,7 @@ export const Container = styled.main`
 export const AccordionRoot = styled(Accordion.Root)`
   background: ${({ theme }) => theme.colors.gray[800]};
   border-radius: ${({ theme }) => theme.radii.sm};
+  box-shadow: 10px 10px 36px -7px rgba(0, 0, 0, 0.3);
 `
 
 export const AccordionItem = styled(Accordion.Item)`
@@ -41,11 +42,11 @@ export const AccordionTrigger = styled(Accordion.Trigger)`
   color: ${({ theme }) => theme.colors.gray[300]};
   display: flex;
   font-family: ${({ theme }) => theme.fontFamily.mono};
-  font-size: ${({ theme }) => theme.fontSize.xxxl};
+  font-size: ${({ theme }) => theme.fontSize.xxl};
   font-weight: ${({ theme }) => theme.fontWeight.semibold};
   justify-content: space-between;
   outline: none;
-  padding: 1rem;
+  padding: 0.8rem;
   position: relative;
   width: 100%;
 
@@ -55,10 +56,10 @@ export const AccordionTrigger = styled(Accordion.Trigger)`
   }
 
   svg {
-    transition: 0.3s ease-in-out;
+    transition: 0.3s cubic-bezier(0.87, 0, 0.13, 1);
 
     [data-state="open"]& {
-      transform: rotate(180deg);
+      transform: rotate(90deg);
     }
   }
 `
@@ -79,17 +80,25 @@ export const AccordionContent = styled(Accordion.Content)`
 
   div {
     color: ${({ theme }) => theme.colors.gray[300]};
-    font-size: ${({ theme }) => theme.fontSize.xl};
-    font-weight: ${({ theme }) => theme.fontWeight.thin};
+    font-size: ${({ theme }) => theme.fontSize.md};
+    line-height: ${({ theme }) => theme.lineHeight.base};
+    font-weight: ${({ theme }) => theme.fontWeight.regular};
     padding: 1rem;
     text-align: justify;
   }
 
   &[data-state="open"] {
-    animation: ${slideDown} 0.2s ease-out;
+    animation: ${slideDown} 0.3s cubic-bezier(0.87, 0, 0.13, 1);
   }
 
   &[data-state="closed"] {
-    animation: ${slideUp} 0.2s ease-out;
+    animation: ${slideUp} 0.3s cubic-bezier(0.87, 0, 0.13, 1);
   }
+`
+
+export const LikeCardContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  width: 100%;
 `
