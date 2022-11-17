@@ -8,13 +8,13 @@ export const GlobalStyle = createGlobalStyle`
 	}
 
 	&:focus {
-		box-shadow: 0 0 0 3px ${({ theme }) => theme.colors.cyan[500]};
+		box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.violet[200]};
 		outline: none;
 	}
 	
 	body {
-		background: ${({ theme }) => theme.colors.gray[900]};
-		color: ${({ theme }) => theme.colors.gray[100]};
+		background: ${({ theme }) => theme.colors.background[900]};
+		color: ${({ theme }) => theme.colors.background[100]};
 		-webkit-font-smoothing: antialiased;
 	}
 	
@@ -29,8 +29,13 @@ export const GlobalStyle = createGlobalStyle`
 		color: inherit;
 	}
 
-	button {
-		cursor: pointer;
+	::-webkit-scrollbar {
+		width: .8rem;
+		background: transparent;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: ${(props) => props.theme.colors.background[700]};
 	}
 	
 	@media (max-width: 992px) {

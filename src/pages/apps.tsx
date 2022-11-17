@@ -14,24 +14,24 @@ function Apps() {
       <Container>
         <Title>Ferramentas</Title>
         <p>
-          Aqui está uma lista de ferramentas, extensões e apps que eu uso no meu dia a dia,
+          Aqui está uma lista de ferramentas, extensões e stacks que eu uso no meu dia a dia,
           deixo também como recomendação experimentá-las.
         </p>
 
         <TabsRoot defaultValue="stacks">
           <TabsList>
             <TabsTrigger value="stacks">
-              <Icon.Code size={24} weight="duotone" />
               Stacks
+              <Icon.Code size={24} weight="duotone" />
             </TabsTrigger>
 
             <TabsTrigger value="desktop">
-              <Icon.LinuxLogo size={24} weight="duotone" />
               Desktop
+              <Icon.Desktop size={24} weight="duotone" />
             </TabsTrigger>
             <TabsTrigger value="web">
-              <Icon.Globe size={24} weight="duotone" />
               Web
+              <Icon.Globe size={24} weight="duotone" />
             </TabsTrigger>
           </TabsList>
 
@@ -149,7 +149,56 @@ function Apps() {
           </TabsContent>
 
           <TabsContent value="web">
-            <div></div>
+            <div>
+              <AppsCards
+                style={{ background: "#e1e1e630" }}
+                src="/icons/minimal-tab-clock.jpg"
+                strong="Minimal New Tab Clock"
+                p="Relógio em nova aba Chrome"
+              />
+
+              <AppsCards
+                style={{ background: "#189c9930" }}
+                src="/icons/coolors-icon.png"
+                strong="Coolors"
+                p="Paletas de cores"
+              />
+
+              <AppsCards
+                style={{ background: "#e1e1e6" }}
+                src="/icons/fonts-google.svg"
+                strong="Google Fonts"
+                p="Fontes para projetos"
+              />
+
+              <AppsCards
+                style={{ background: "#e1e1e620" }}
+                src="/icons/svg-export.jpg"
+                strong="SVG Exports"
+                p="Exportação de assets de websites"
+              />
+
+              <AppsCards
+                style={{ background: "#189c9920" }}
+                src="/icons/grammarly-icon.svg"
+                strong="Grammarly"
+                p="Correção de ortografia integrado a sistemas"
+              />
+
+              <AppsCards
+                style={{ background: "#47a7671f" }}
+                src="/icons/jsonviewer.png"
+                strong="JSON Viewer"
+                p="Visualização de JSON no browser"
+              />
+
+              <AppsCards
+                style={{ background: "#9c188653" }}
+                src="/icons/unnamed.jpg"
+                strong="CSS Peeper"
+                p="Visualização de CSS de websites"
+              />
+            </div>
           </TabsContent>
         </TabsRoot>
       </Container>

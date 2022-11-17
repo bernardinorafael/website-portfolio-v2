@@ -31,48 +31,75 @@ function Home() {
           <ProjectsContainer>
             <Project>
               <div>
-                <Image height={180} width={180} src="/images/mockflow.png" alt="" />
+                <Link target="_blank" href="https://github.com/bernardinorafael/todo-advanced">
+                  Ver no GitHub
+                  <Icon.ArrowUpRight weight="regular" size={12} />
+                </Link>
+                <Link target="_blank" href="https://todo-advanced-bernardino.vercel.app/">
+                  Confira o projeto online
+                  <Icon.ArrowUpRight weight="regular" size={12} />
+                </Link>
+              </div>
+
+              <div>
+                <Image height={180} width={180} src="/images/todo-preview.png" alt="" />
               </div>
 
               <footer>
-                <strong>Shopping</strong>
-
-                <div>
-                  <span>TypeScript</span>
-                  <span>Next.js</span>
-                </div>
+                <strong>Lista de tarefas</strong>
+                <span>App com função de CRUD, pode-se criar, excluir e editar um item.</span>
               </footer>
             </Project>
+
             <Project>
               <div>
-                <Image height={180} width={180} src="/images/mockflow.png" alt="" />
+                <Link target="_blank" href="https://github.com/bernardinorafael/shopping">
+                  Ver no GitHub
+                  <Icon.ArrowUpRight weight="regular" size={12} />
+                </Link>
+              </div>
+
+              <div>
+                <Image height={180} width={180} src="/images/shopping-preview.png" alt="" />
               </div>
 
               <footer>
                 <strong>Shopping</strong>
-
-                <div>
-                  <span>TypeScript</span>
-                  <span>Next.js</span>
-                </div>
+                <span>Mini shopping com sistema de pagamento integrado.</span>
               </footer>
             </Project>
+
             <Project>
               <div>
-                <Image height={180} width={180} src="/images/mockflow.png" alt="" />
+                <Link
+                  target="_blank"
+                  href="https://github.com/bernardinorafael/theme-switcher"
+                >
+                  Ver no GitHub
+                  <Icon.ArrowUpRight weight="regular" size={12} />
+                </Link>
+
+                <Link target="_blank" href="https://theme-switcher-one.vercel.app/">
+                  Confira o projeto online
+                  <Icon.ArrowUpRight weight="regular" size={12} />
+                </Link>
+              </div>
+
+              <div>
+                <Image
+                  height={180}
+                  width={180}
+                  src="/images/theme-switcher-preview.png"
+                  alt=""
+                />
               </div>
 
               <footer>
-                <strong>Shopping</strong>
-
-                <div>
-                  <span>TypeScript</span>
-                  <span>Next.js</span>
-                </div>
+                <strong>Theme switcher</strong>
+                <span>App que armazena o tema escolhido em localStorage</span>
               </footer>
             </Project>
           </ProjectsContainer>
-
           <Link href="/projects">
             Ver mais projetos
             <Icon.ArrowRight />

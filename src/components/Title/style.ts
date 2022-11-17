@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const Strong = styled.strong`
-  border-bottom: 2px solid ${({ theme }) => theme.colors.gray[700]};
+  border-bottom: 2px solid ${({ theme }) => theme.colors.background[700]};
   color: ${({ theme }) => theme.colors.white};
   font-family: ${({ theme }) => theme.fontFamily.mono};
   font-size: ${({ theme }) => theme.fontSize.xxxl};

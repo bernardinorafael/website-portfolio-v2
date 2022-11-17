@@ -2,9 +2,9 @@ import styled from "styled-components"
 
 export const Container = styled.div`
   align-items: center;
-  background: ${(props) => props.theme.colors.gray[800]};
-  border-radius: 0.8rem;
-  border: 1px solid ${(props) => props.theme.colors.gray[700]};
+  background: ${(props) => props.theme.colors.background[800]};
+  border-radius: ${({ theme }) => theme.radii.sm};
+  border: 1px solid ${(props) => props.theme.colors.background[700]};
   display: flex;
   gap: 1.5rem;
   padding: 0.5rem;
@@ -17,13 +17,13 @@ export const Container = styled.div`
   }
 
   div:first-child {
-    background: ${({ theme }) => theme.colors.violet[50]};
-    border-radius: 0.5rem;
-    height: 3rem;
-    width: 3rem;
     align-items: center;
+    background: ${({ theme }) => theme.colors.violet[50]};
+    border-radius: ${({ theme }) => theme.radii.sm};
     display: flex;
+    height: 3rem;
     justify-content: center;
+    width: 3rem;
   }
 
   strong {
@@ -32,8 +32,12 @@ export const Container = styled.div`
   }
 
   p {
+    color: ${({ theme }) => theme.colors.background[400]};
     font-size: ${({ theme }) => theme.fontSize.xs};
-    color: ${({ theme }) => theme.colors.gray[400]};
     line-height: ${({ theme }) => theme.lineHeight.base};
+  }
+
+  @media (max-width: 640px) {
+    padding: 1rem;
   }
 `

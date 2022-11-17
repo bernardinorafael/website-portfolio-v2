@@ -2,20 +2,24 @@ import * as Accordion from "@radix-ui/react-accordion"
 import styled, { keyframes } from "styled-components"
 
 export const Container = styled.main`
-  margin: 8rem auto 2rem;
+  margin: 8rem auto 4rem;
   max-width: 780px;
   padding: 0 2rem;
   width: 100%;
+
+  @media (max-width: 640px) {
+    margin: 5rem auto 6rem;
+  }
 `
 
 export const AccordionRoot = styled(Accordion.Root)`
-  background: ${({ theme }) => theme.colors.gray[800]};
+  background: ${({ theme }) => theme.colors.background[800]};
   border-radius: ${({ theme }) => theme.radii.sm};
   box-shadow: 10px 10px 36px -7px rgba(0, 0, 0, 0.3);
 `
 
 export const AccordionItem = styled(Accordion.Item)`
-  border: 1px solid ${(props) => props.theme.colors.gray[700]};
+  border: 1px solid ${(props) => props.theme.colors.background[700]};
 
   &:first-child {
     border-top-left-radius: ${({ theme }) => theme.radii.sm};
@@ -36,10 +40,10 @@ export const AccordionItem = styled(Accordion.Item)`
 
 export const AccordionTrigger = styled(Accordion.Trigger)`
   align-items: center;
-  background: ${({ theme }) => theme.colors.gray[800]};
+  background: ${({ theme }) => theme.colors.background[800]};
   border-radius: ${({ theme }) => theme.radii.sm};
   border: none;
-  color: ${({ theme }) => theme.colors.gray[300]};
+  color: ${({ theme }) => theme.colors.background[300]};
   display: flex;
   font-family: ${({ theme }) => theme.fontFamily.mono};
   font-size: ${({ theme }) => theme.fontSize.xxl};
@@ -75,11 +79,11 @@ const slideUp = keyframes`
 `
 
 export const AccordionContent = styled(Accordion.Content)`
-  background: ${({ theme }) => theme.colors.gray[900]};
+  background: ${({ theme }) => theme.colors.background[900]};
   overflow: hidden;
 
   div {
-    color: ${({ theme }) => theme.colors.gray[300]};
+    color: ${({ theme }) => theme.colors.background[300]};
     font-size: ${({ theme }) => theme.fontSize.md};
     line-height: ${({ theme }) => theme.lineHeight.base};
     font-weight: ${({ theme }) => theme.fontWeight.regular};

@@ -1,9 +1,17 @@
+import * as Popover from "@radix-ui/react-popover"
+import "animate.css"
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/router"
 import * as Icon from "phosphor-react"
-import { ButtonToggleTheme, Container } from "./styles"
+import ButtonToggleTheme from "../ButtonToggleTheme"
+import PopoverContact from "../PopoverContact"
+import PopoverMoreOptions from "../PopoverMoreOptions"
+import { ActiveLinkNavbar, Button, Container } from "./styles"
 
 export function Header() {
+  const { asPath } = useRouter()
+
   return (
     <Container>
       <div>
@@ -12,21 +20,35 @@ export function Header() {
         </Link>
 
         <nav>
-          <Link href="/about">Sobre mim</Link>
-          <Link href="/apps">Apps</Link>
+          <Link href="/about" legacyBehavior passHref>
+            <ActiveLinkNavbar asPath={asPath}>Sobre mim</ActiveLinkNavbar>
+          </Link>
+          <Link href="/apps" legacyBehavior passHref>
+            <ActiveLinkNavbar asPath={asPath}>Apps</ActiveLinkNavbar>
+          </Link>
 
-          <ButtonToggleTheme>
-            <Icon.User size={20} weight="duotone" />
-          </ButtonToggleTheme>
+          <Popover.Root>
+            <Popover.Trigger asChild>
+              <Button>
+                <Icon.User size={20} weight="duotone" />
+              </Button>
+            </Popover.Trigger>
 
-          <ButtonToggleTheme>
-            <Icon.DotsThreeOutlineVertical size={20} weight="duotone" />
-          </ButtonToggleTheme>
+            <PopoverContact />
+          </Popover.Root>
+
+          <Popover.Root>
+            <Popover.Trigger asChild>
+              <Button>
+                <Icon.DotsThreeOutlineVertical size={20} weight="duotone" />
+              </Button>
+            </Popover.Trigger>
+
+            <PopoverMoreOptions />
+          </Popover.Root>
         </nav>
 
-        <ButtonToggleTheme>
-          <Icon.Sun size={20} weight="duotone" />
-        </ButtonToggleTheme>
+        <ButtonToggleTheme />
       </div>
     </Container>
   )

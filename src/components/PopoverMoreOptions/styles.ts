@@ -1,5 +1,5 @@
 import * as Popover from "@radix-ui/react-popover"
-import styled, { keyframes } from "styled-components"
+import styled, { css, keyframes } from "styled-components"
 
 const fadeAnimation = keyframes`
 	from {
@@ -25,7 +25,7 @@ export const PopoverContent = styled(Popover.Content)`
   transform-origin: var(--radix-popover-content-transform-origin);
 
   &:focus {
-    box-shadow: 4px 6px 20px -8px rgb(0 0 0 / 75%);
+    box-shadow: 0 10px 20px -8px rgb(0 0 0 / 75%);
   }
 
   a:focus {
@@ -42,7 +42,11 @@ export const PopoverContent = styled(Popover.Content)`
   }
 `
 
-export const ItemPopover = styled.div`
+interface ItemPopoverProps {
+  disabledContent?: boolean
+}
+
+export const ItemPopover = styled.div<ItemPopoverProps>`
   background: transparent;
   border-radius: ${({ theme }) => theme.radii.xs};
   border: 1px solid transparent;
@@ -64,7 +68,16 @@ export const ItemPopover = styled.div`
     strong {
       display: flex;
       align-items: center;
-      gap: 0.225rem;
+      gap: 0.5rem;
+
+      span {
+        font-size: ${({ theme }) => theme.fontSize.xs};
+        font-weight: ${({ theme }) => theme.fontWeight.thin};
+        background: ${({ theme }) => theme.colors.violet[50]};
+        color: ${({ theme }) => theme.colors.violet[300]};
+        border-radius: ${({ theme }) => theme.radii.xs};
+        padding: 0.125rem;
+      }
     }
 
     p {
@@ -72,4 +85,12 @@ export const ItemPopover = styled.div`
       font-size: ${({ theme }) => theme.fontSize.xs};
     }
   }
+
+  ${({ disabledContent }) =>
+    disabledContent &&
+    css`
+      opacity: 0.4;
+      cursor: not-allowed;
+      pointer-events: none;
+    `}
 `
