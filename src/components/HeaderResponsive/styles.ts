@@ -6,7 +6,8 @@ export const Container = styled.header`
     background: ${({ theme }) => theme.colors.background[900]};
     border-top: 1px solid ${({ theme }) => theme.colors.background[700]};
     bottom: 0;
-    height: 4rem;
+    height: 7rem;
+		padding-bottom: 3rem;
     box-shadow: 0px -21px 48px 0px rgba(0, 0, 0, 0.5);
     padding: 0 2rem;
     position: fixed;
