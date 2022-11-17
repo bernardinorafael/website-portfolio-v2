@@ -8,4 +8,12 @@ export const Strong = styled.strong`
   margin-bottom: 1.5rem;
   padding-bottom: 0.625rem;
   user-select: none;
+
+  @media (max-width: 470px) {
+    text-align: center;
+  }
+
+  @media (max-width: 640px) {
+    text-align: center;
+  }
 `

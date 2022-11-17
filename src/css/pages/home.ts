@@ -23,6 +23,14 @@ export const Container = styled.main`
       font-size: ${({ theme }) => theme.fontSize.xl};
       font-weight: ${({ theme }) => theme.fontWeight.thin};
       text-align: justify;
+
+      @media (max-width: 470px) {
+        text-align: left;
+      }
+
+      @media (max-width: 640px) {
+        text-align: left;
+      }
     }
   }
 
@@ -107,7 +115,7 @@ export const Project = styled.div`
       display: flex;
       font-size: ${({ theme }) => theme.fontSize.xs};
       gap: 0.225rem;
-			border: 1px solid #fff;
+      border: 1px solid #fff;
 
       &:hover {
         color: ${({ theme }) => theme.colors.background[300]};
