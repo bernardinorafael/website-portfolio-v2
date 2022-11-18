@@ -115,7 +115,6 @@ export const Project = styled.div`
       display: flex;
       font-size: ${({ theme }) => theme.fontSize.xs};
       gap: 0.225rem;
-      border: 1px solid #fff;
 
       &:hover {
         color: ${({ theme }) => theme.colors.background[300]};
