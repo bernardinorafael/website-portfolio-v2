@@ -85,8 +85,8 @@ export const AccordionContent = styled(Accordion.Content)`
   div {
     color: ${({ theme }) => theme.colors.background[300]};
     font-size: ${({ theme }) => theme.fontSize.md};
-    line-height: ${({ theme }) => theme.lineHeight.base};
     font-weight: ${({ theme }) => theme.fontWeight.regular};
+    line-height: ${({ theme }) => theme.lineHeight.base};
     padding: 1rem;
     text-align: justify;
   }
