@@ -14,7 +14,7 @@ function Home() {
 
       <Container>
         <section>
-          <Title>Hello, I&apos;m Rafael 👋</Title>
+          <Title>Hello, I&apos;m Rafael</Title>
 
           <p>
             Desenvolvedor web, nascido em Criciúma, Santa Catarina, região sul do país
