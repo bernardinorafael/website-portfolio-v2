@@ -5,7 +5,7 @@ export const Container = styled.main`
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin: 8rem auto 4rem;
+  margin: 4rem auto 4rem;
   max-width: 780px;
   padding: 0 2rem;
 
