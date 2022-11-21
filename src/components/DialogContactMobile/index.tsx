@@ -1,8 +1,8 @@
 import * as Dialog from "@radix-ui/react-dialog"
-import * as Icon from "phosphor-react"
-import { DialogClose, DialogContent, DialogOverlay, ItemContact } from "./styles"
 import "animate.css"
 import Link from "next/link"
+import * as Icon from "phosphor-react"
+import { DialogClose, DialogContent, DialogOverlay, ItemContact } from "./styles"
 
 function DialogContactMobile() {
   return (
@@ -25,7 +25,7 @@ function DialogContactMobile() {
               <div>
                 <strong>
                   GitHub
-                  <Icon.ArrowUpRight weight="thin" size={16} />
+                  <Icon.ArrowSquareOut weight="thin" size={16} />
                 </strong>
                 <p>Acompanhe meus projetos diretamente no GitHub.</p>
               </div>
@@ -40,7 +40,7 @@ function DialogContactMobile() {
               <div>
                 <strong>
                   LinkedIn
-                  <Icon.ArrowUpRight weight="thin" size={16} />
+                  <Icon.ArrowSquareOut weight="thin" size={16} />
                 </strong>
                 <p>Conecte-se profissionalmente comigo no LinkedIn.</p>
               </div>
@@ -55,7 +55,7 @@ function DialogContactMobile() {
               <div>
                 <strong>
                   Twitter
-                  <Icon.ArrowUpRight weight="thin" size={16} />
+                  <Icon.ArrowSquareOut weight="thin" size={16} />
                 </strong>
                 <p>Encontre-me na rede social do passarinho.</p>
               </div>

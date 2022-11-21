@@ -26,7 +26,7 @@ export const Button = styled.button`
     color: ${({ theme }) => theme.colors.background[300]};
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 670px) {
     justify-content: center;
     padding: 0 0.5rem;
     width: auto;

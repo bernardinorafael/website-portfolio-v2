@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 export const Container = styled.main`
-  margin: 4rem auto 4rem;
+  margin: 4rem auto 3rem;
   max-width: 780px;
   padding: 0 2rem;
   width: 100%;
@@ -16,6 +16,10 @@ export const Container = styled.main`
 
     strong {
       align-self: flex-start;
+
+      @media (max-width: 670px) {
+        align-self: center;
+      }
     }
 
     p {
@@ -28,8 +32,9 @@ export const Container = styled.main`
         text-align: left;
       }
 
-      @media (max-width: 640px) {
-        text-align: left;
+      @media (max-width: 670px) {
+        text-align: center;
+				font-size: ${({ theme }) => theme.fontSize.md};
       }
     }
   }
@@ -55,23 +60,15 @@ export const Container = styled.main`
     }
   }
 
-  @media (max-width: 640px) {
-    margin: 5rem auto 6rem;
+  @media (max-width: 670px) {
+    margin: 2.5rem auto 7rem;
   }
 `
 
 export const ProjectsContainer = styled.section`
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(3, 1fr);
-
-  @media (max-width: 640px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (max-width: 470px) {
-    grid-template-columns: repeat(1, 1fr);
-  }
+  grid-template-columns: repeat(1, 1fr);
 `
 
 export const Project = styled.div`
@@ -80,72 +77,62 @@ export const Project = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.background[700]};
   display: flex;
   flex-direction: column;
-  opacity: 0.7;
+  gap: 0.5rem;
+  opacity: 0.8;
   overflow: hidden;
+  padding: 0.5rem;
   position: relative;
   transition: 0.3s;
   user-select: none;
 
   &:hover {
     box-shadow: 4px 6px 12px -8px rgb(0 0 0 / 75%);
-    opacity: 1;
     transform: translateY(-3px);
-
-    div:first-child {
-      opacity: 1;
-      transition: opacity 0.3s;
-    }
   }
 
-  div:first-child {
+  strong {
+    font-size: ${({ theme }) => theme.fontSize.xxl};
+  }
+
+  > span {
+    color: ${({ theme }) => theme.colors.background[400]};
+    font-size: ${({ theme }) => theme.fontSize.sm};
+    font-weight: ${({ theme }) => theme.fontWeight.thin};
+    height: 2.25rem;
+  }
+
+  div {
+    align-items: center;
     display: flex;
-    flex-direction: column;
-    gap: 0.225rem;
-    left: 0;
-    opacity: 0;
-    padding: 0.5rem;
-    position: absolute;
-    top: 0;
+    gap: 0.5rem;
 
-    a {
-      align-items: center;
-      align-self: flex-start;
-      border-bottom: 1px solid transparent;
-      color: ${({ theme }) => theme.colors.background[500]};
-      display: flex;
+    span {
+      background: ${({ theme }) => theme.colors.purple.purple2};
+      border-radius: ${({ theme }) => theme.radii.xs};
+      border: 1px solid ${({ theme }) => theme.colors.purple.purple6};
+      color: ${({ theme }) => theme.colors.purple.purple11};
       font-size: ${({ theme }) => theme.fontSize.xs};
-      gap: 0.225rem;
-
-      &:hover {
-        color: ${({ theme }) => theme.colors.background[300]};
-        border-bottom: 1px solid ${({ theme }) => theme.colors.background[300]};
-      }
-
-      @media (max-width: 470px) {
-        align-self: center;
-      }
+      line-height: 1.6;
+      padding: 0.125rem 0.325rem;
     }
-  }
-
-  img {
-    object-fit: cover;
-    width: 100%;
   }
 
   footer {
+    align-items: center;
     display: flex;
-    display: flex;
-    flex-direction: column;
-    gap: 0.225rem;
-    padding: 0.5rem 1rem;
-
-    strong {
-      font-size: ${({ theme }) => theme.fontSize.xl};
-    }
+    gap: 1rem;
+    margin-top: 0.5rem;
 
     span {
       color: ${({ theme }) => theme.colors.background[400]};
       font-size: ${({ theme }) => theme.fontSize.xs};
+
+      &:first-child {
+        align-items: center;
+        display: flex;
+        gap: 0.225rem;
+        line-height: 0;
+      }
     }
   }
 `

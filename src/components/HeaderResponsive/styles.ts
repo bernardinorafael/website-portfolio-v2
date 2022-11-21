@@ -2,7 +2,7 @@ import styled from "styled-components"
 import * as Dialog from "@radix-ui/react-dialog"
 
 export const Container = styled.header`
-  @media (max-width: 640px) {
+  @media (max-width: 670px) {
     background: ${({ theme }) => theme.colors.background[900]};
     border-top: 1px solid ${({ theme }) => theme.colors.background[700]};
     bottom: 0;
@@ -18,7 +18,7 @@ export const Container = styled.header`
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       height: 4rem;
-      padding: 0.5rem 0;
+      padding-top: 0.5rem;
     }
   }
 `

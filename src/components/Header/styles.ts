@@ -44,7 +44,7 @@ export const Container = styled.header`
     }
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 670px) {
     display: none;
   }
 `
@@ -54,27 +54,25 @@ interface ActiveLinkNavbarProps {
 }
 
 export const ActiveLinkNavbar = styled.a<ActiveLinkNavbarProps>`
-  border-bottom: ${(props) =>
-    props.asPath === props.href
-      ? `1px solid ${props.theme.colors.background[700]}`
-      : "1px solid transparent"};
-
+  font-weight: ${({ theme }) => theme.fontWeight.semibold};
+  border-radius: ${({ theme }) => theme.radii.sm};
+  padding: 0 0.5rem;
   color: ${(props) =>
     props.asPath === props.href
-      ? props.theme.colors.white
+      ? props.theme.colors.background[100]
       : props.theme.colors.background[400]};
 
-  font-weight: ${({ theme }) => theme.fontWeight.semibold};
-  padding: 0 0.5rem;
+  background: ${(props) =>
+    props.asPath === props.href ? props.theme.colors.background[700] : "transparent"};
 
   &:focus {
-    box-shadow: 0 0 0 1px ${({ theme }) => theme.colors.violet[200]};
+    box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.violet[200]};
   }
 
   &:hover {
-    border-bottom: 1px solid ${({ theme }) => theme.colors.background[700]};
-    color: ${({ theme }) => theme.colors.white};
-    transition: border-color 0.3s, color 0.3s;
+    background: ${({ theme }) => theme.colors.background[700]};
+    color: ${({ theme }) => theme.colors.background[100]};
+    transition: background-color 0.3s, color 0.3s;
   }
 `
 

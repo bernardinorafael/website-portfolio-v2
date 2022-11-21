@@ -7,8 +7,8 @@ export const Container = styled.main`
   padding: 0 2rem;
   width: 100%;
 
-  @media (max-width: 640px) {
-    margin: 5rem auto 6rem;
+  @media (max-width: 670px) {
+    margin: 2.5rem auto 7rem;
   }
 `
 

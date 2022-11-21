@@ -31,6 +31,12 @@ export const dark = {
       700: "#5a189a",
     },
 
+    purple: {
+      purple2: "#221527",
+      purple6: "#4e2667",
+      purple11: "#bf7af0",
+    },
+
     green: {
       50: "#00B37E20",
       100: "#00B37E50",
@@ -101,6 +107,12 @@ export const light = {
       700: "#B4CED9",
       800: "#BEE4F5",
       900: "#F2F2F2",
+    },
+
+    purple: {
+      purple11: "#fff",
+      purple2: "#4e2667",
+      purple6: "#bf7af0",
     },
 
     cyan: {

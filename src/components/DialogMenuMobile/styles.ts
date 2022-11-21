@@ -31,7 +31,7 @@ export const DialogClose = styled(Dialog.Close)`
 `
 
 export const DialogContent = styled(Dialog.Content)`
-  @media (max-width: 640px) {
+  @media (max-width: 670px) {
     --animate-duration: 0.3s;
     background: ${({ theme }) => theme.colors.background[900]};
     border-top: 1px solid ${({ theme }) => theme.colors.background[700]};

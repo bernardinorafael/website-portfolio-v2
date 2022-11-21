@@ -19,8 +19,8 @@ export const Container = styled.main`
     user-select: none;
   }
 
-  @media (max-width: 640px) {
-    margin: 5rem auto 6rem;
+  @media (max-width: 670px) {
+    margin: 2.5rem auto 7rem;
   }
 `
 

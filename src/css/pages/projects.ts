@@ -7,7 +7,7 @@ export const Container = styled.main`
   max-width: 780px;
   padding: 0 2rem;
 
-  strong {
+  > strong {
     align-self: center;
   }
 
@@ -23,20 +23,12 @@ export const Container = styled.main`
   section {
     display: grid;
     gap: 2rem;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     margin-top: 3rem;
-
-    @media (max-width: 640px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media (max-width: 470px) {
-      grid-template-columns: repeat(1, 1fr);
-    }
   }
 
-  @media (max-width: 640px) {
-    margin: 5rem auto 8rem;
+  @media (max-width: 670px) {
+    margin: 2.5rem auto 7rem;
   }
 `
 
@@ -45,12 +37,12 @@ export const Project = styled.div`
   border-radius: ${({ theme }) => theme.radii.sm};
   border: 1px solid ${({ theme }) => theme.colors.background[700]};
   display: flex;
-  position: relative;
-  user-select: none;
   flex-direction: column;
   opacity: 0.7;
   overflow: hidden;
+  position: relative;
   transition: 0.3s;
+  user-select: none;
 
   &:hover {
     box-shadow: 4px 6px 12px -8px rgb(0 0 0 / 75%);
@@ -64,26 +56,26 @@ export const Project = styled.div`
   }
 
   div:first-child {
-    position: absolute;
     display: flex;
-    gap: 0.225rem;
     flex-direction: column;
-    top: 5px;
+    gap: 0.225rem;
     left: 5px;
     opacity: 0;
+    position: absolute;
+    top: 5px;
 
     a {
-      font-size: ${({ theme }) => theme.fontSize.xs};
-      color: ${({ theme }) => theme.colors.background[500]};
-      display: flex;
       align-items: center;
-      gap: 0.225rem;
       align-self: flex-start;
       border-bottom: 1px solid transparent;
+      color: ${({ theme }) => theme.colors.background[500]};
+      display: flex;
+      font-size: ${({ theme }) => theme.fontSize.xs};
+      gap: 0.225rem;
 
       &:hover {
-        color: ${({ theme }) => theme.colors.background[300]};
         border-bottom: 1px solid ${({ theme }) => theme.colors.background[300]};
+        color: ${({ theme }) => theme.colors.background[300]};
       }
     }
   }
@@ -94,12 +86,12 @@ export const Project = styled.div`
   }
 
   footer {
+    box-shadow: 4px 6px 20px -8px rgb(0 0 0 / 75%);
+    display: flex;
     display: flex;
     flex-direction: column;
-    padding: 0.5rem 1rem;
-    display: flex;
     gap: 0.225rem;
-    box-shadow: 4px 6px 20px -8px rgb(0 0 0 / 75%);
+    padding: 0.5rem 1rem;
 
     strong {
       align-self: flex-start;

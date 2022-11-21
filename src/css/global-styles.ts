@@ -31,11 +31,11 @@ export const GlobalStyle = createGlobalStyle`
 
 	::-webkit-scrollbar {
 		width: .8rem;
-		background: transparent;
+		background: ${({ theme }) => theme.colors.background[700]};
 	}
 
 	::-webkit-scrollbar-thumb {
-		background: ${(props) => props.theme.colors.background[700]};
+		background: ${(props) => props.theme.colors.background[600]};
 	}
 	
 	@media (max-width: 992px) {

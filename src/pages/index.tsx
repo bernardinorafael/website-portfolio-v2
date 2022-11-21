@@ -1,11 +1,41 @@
+import { GetStaticProps } from "next"
 import Head from "next/head"
-import Image from "next/image"
 import Link from "next/link"
 import * as Icon from "phosphor-react"
+import { Repository } from "../@types/repository"
+import CardProject from "../components/CardProject"
 import Title from "../components/Title"
-import { Container, Project, ProjectsContainer } from "../css/pages/home"
+import { Container, ProjectsContainer } from "../css/pages/home"
+import { app } from "../services/axios"
 
-function Home() {
+export const getStaticProps: GetStaticProps = async () => {
+  const response = await app.get('/repos?per_page=3&sort=pushed"')
+
+  const repositories = response.data.map((repository: Repository) => {
+    return {
+      name: repository.name,
+      topics: repository.topics,
+      svn_url: repository.svn_url,
+      language: repository.language,
+      updated_at: repository.updated_at,
+      description: repository.description,
+    }
+  })
+
+  return {
+    props: {
+      repositories,
+    },
+
+    revalidate: 60 * 60 * 120, // 5 dias
+  }
+}
+
+interface HomeProps {
+  repositories: Repository[]
+}
+
+function Home({ repositories }: HomeProps) {
   return (
     <>
       <Head>
@@ -14,7 +44,7 @@ function Home() {
 
       <Container>
         <section>
-          <Title>Hello, I&apos;m Rafael</Title>
+          <Title>Olá!, I&apos;m Rafael</Title>
 
           <p>
             Desenvolvedor web, nascido em Criciúma, Santa Catarina, região sul do país
@@ -29,77 +59,21 @@ function Home() {
           <Title>Meus projetos</Title>
 
           <ProjectsContainer>
-            <Project>
-              <div>
-                <Link target="_blank" href="https://github.com/bernardinorafael/todo-advanced">
-                  Ver no GitHub
-                  <Icon.ArrowUpRight weight="regular" size={12} />
-                </Link>
-                <Link target="_blank" href="https://todo-advanced-bernardino.vercel.app/">
-                  Confira o projeto online
-                  <Icon.ArrowUpRight weight="regular" size={12} />
-                </Link>
-              </div>
-
-              <div>
-                <Image height={180} width={180} src="/images/todo-preview.png" alt="" />
-              </div>
-
-              <footer>
-                <strong>Lista de tarefas</strong>
-                <span>App com função de CRUD, pode-se criar, excluir e editar um item.</span>
-              </footer>
-            </Project>
-
-            <Project>
-              <div>
-                <Link target="_blank" href="https://github.com/bernardinorafael/shopping">
-                  Ver no GitHub
-                  <Icon.ArrowUpRight weight="regular" size={12} />
-                </Link>
-              </div>
-
-              <div>
-                <Image height={180} width={180} src="/images/shopping-preview.png" alt="" />
-              </div>
-
-              <footer>
-                <strong>Shopping</strong>
-                <span>Mini shopping com sistema de pagamento integrado.</span>
-              </footer>
-            </Project>
-
-            <Project>
-              <div>
-                <Link
-                  target="_blank"
-                  href="https://github.com/bernardinorafael/theme-switcher"
-                >
-                  Ver no GitHub
-                  <Icon.ArrowUpRight weight="regular" size={12} />
-                </Link>
-
-                <Link target="_blank" href="https://theme-switcher-one.vercel.app/">
-                  Confira o projeto online
-                  <Icon.ArrowUpRight weight="regular" size={12} />
-                </Link>
-              </div>
-
-              <div>
-                <Image
-                  height={180}
-                  width={180}
-                  src="/images/theme-switcher-preview.png"
-                  alt=""
+            {repositories?.map((repository) => {
+              return (
+                <CardProject
+                  key={repository.id}
+                  name={repository.name}
+                  topics={repository.topics}
+                  svn_url={repository.svn_url}
+                  language={repository.language}
+                  updated_at={repository.updated_at}
+                  description={repository.description}
                 />
-              </div>
-
-              <footer>
-                <strong>Theme switcher</strong>
-                <span>App que armazena o tema escolhido em localStorage</span>
-              </footer>
-            </Project>
+              )
+            })}
           </ProjectsContainer>
+
           <Link href="/projects">
             Ver mais projetos
             <Icon.ArrowRight />

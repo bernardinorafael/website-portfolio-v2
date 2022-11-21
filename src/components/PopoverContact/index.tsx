@@ -14,7 +14,7 @@ function PopoverContact() {
               <div>
                 <strong>
                   GitHub
-                  <Icon.ArrowUpRight weight="thin" size={16} />
+                  <Icon.ArrowSquareOut weight="regular" size={16} />
                 </strong>
                 <p>Acompanhe meus projetos diretamente no GitHub.</p>
               </div>
@@ -27,7 +27,7 @@ function PopoverContact() {
               <div>
                 <strong>
                   LinkedIn
-                  <Icon.ArrowUpRight weight="thin" size={16} />
+                  <Icon.ArrowSquareOut weight="regular" size={16} />
                 </strong>
                 <p>Conecte-se profissionalmente comigo no LinkedIn.</p>
               </div>
@@ -40,7 +40,7 @@ function PopoverContact() {
               <div>
                 <strong>
                   Twitter
-                  <Icon.ArrowUpRight weight="thin" size={16} />
+                  <Icon.ArrowSquareOut weight="regular" size={16} />
                 </strong>
                 <p>Encontre-me na rede social do passarinho.</p>
               </div>
