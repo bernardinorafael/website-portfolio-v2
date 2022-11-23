@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next"
+import { GetServerSideProps } from "next"
 import Head from "next/head"
 import { Repository } from "../@types/repository"
 import CardProject from "../components/CardProject"
@@ -6,8 +6,8 @@ import Title from "../components/Title"
 import { Container } from "../css/pages/projects"
 import { app } from "../services/axios"
 
-export const getStaticProps: GetStaticProps = async () => {
-  const response = await app.get("/repos?sort=pushed")
+export const getServerSideProps: GetServerSideProps = async () => {
+  const response = await app.get("/repos?sort=created")
 
   const repositories = response.data.map((repository: Repository) => {
     return {
@@ -24,8 +24,6 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       repositories,
     },
-
-    revalidate: 60 * 60 * 120, // 5 dias
   }
 }
 

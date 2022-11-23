@@ -68,7 +68,7 @@ export const dark = {
   },
 
   fontFamily: {
-    default: "IBM Plex Sans, sans-serif",
+    default: "Inter Tight, sans-serif",
     mono: "IBM Plex Mono, monospace",
   },
 

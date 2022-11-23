@@ -29,8 +29,12 @@ export default class MyDocument extends Document {
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
           <link
-            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,300&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap"
+            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@600&family=Inter+Tight:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
+          />
+          <meta
+            name="description"
+            content="Website portfólio Rafael Bernardino, desenvolvedor web com foco em TypeScript e Next.js."
           />
           <link rel="shortcut icon" href="/favicon.png" />
         </Head>

@@ -71,10 +71,11 @@ export const ItemPopover = styled.div<ItemPopoverProps>`
       gap: 0.5rem;
 
       span {
+        background: ${({ theme }) => theme.colors.purple.purple2};
+        border: 1px solid ${({ theme }) => theme.colors.purple.purple6};
+        color: ${({ theme }) => theme.colors.purple.purple11};
         font-size: ${({ theme }) => theme.fontSize.xs};
         font-weight: ${({ theme }) => theme.fontWeight.thin};
-        background: ${({ theme }) => theme.colors.violet[50]};
-        color: ${({ theme }) => theme.colors.violet[300]};
         border-radius: ${({ theme }) => theme.radii.xs};
         padding: 0.125rem;
       }

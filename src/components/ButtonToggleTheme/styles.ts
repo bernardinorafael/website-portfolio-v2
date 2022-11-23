@@ -2,8 +2,8 @@ import styled from "styled-components"
 
 export const Button = styled.button`
   align-items: center;
-  background: ${({ theme }) => theme.colors.background[700]};
   border-radius: ${({ theme }) => theme.radii.sm};
+  background: transparent;
   border: none;
   display: flex;
   gap: 1rem;
@@ -14,8 +14,8 @@ export const Button = styled.button`
   width: 2.25rem;
 
   &:hover {
-    filter: brightness(1.1);
-    transition: filter 0.3s;
+    background: ${({ theme }) => theme.colors.background[700]};
+    transition: background-color 0.2s;
   }
 
   span {
@@ -32,7 +32,7 @@ export const Button = styled.button`
     width: auto;
 
     span {
-			display: block;
+      display: block;
       color: ${({ theme }) => theme.colors.background[400]};
       font-weight: ${({ theme }) => theme.fontWeight.semibold};
     }

@@ -54,8 +54,9 @@ interface ActiveLinkNavbarProps {
 }
 
 export const ActiveLinkNavbar = styled.a<ActiveLinkNavbarProps>`
+  border-radius: ${({ theme }) => theme.radii.xs};
+  font-size: ${({ theme }) => theme.fontSize.sm};
   font-weight: ${({ theme }) => theme.fontWeight.semibold};
-  border-radius: ${({ theme }) => theme.radii.sm};
   padding: 0 0.5rem;
   color: ${(props) =>
     props.asPath === props.href

@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next"
+import { GetServerSideProps } from "next"
 import Head from "next/head"
 import Link from "next/link"
 import * as Icon from "phosphor-react"
@@ -8,7 +8,7 @@ import Title from "../components/Title"
 import { Container, ProjectsContainer } from "../css/pages/home"
 import { app } from "../services/axios"
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const response = await app.get('/repos?per_page=3&sort=pushed"')
 
   const repositories = response.data.map((repository: Repository) => {
@@ -26,8 +26,6 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       repositories,
     },
-
-    revalidate: 60 * 60 * 120, // 5 dias
   }
 }
 
@@ -39,12 +37,12 @@ function Home({ repositories }: HomeProps) {
   return (
     <>
       <Head>
-        <title>Início | Rafael Bernardino</title>
+        <title>Rafael Bernardino</title>
       </Head>
 
       <Container>
         <section>
-          <Title>Olá!, I&apos;m Rafael</Title>
+          <Title>Hello! I&apos;m Rafael</Title>
 
           <p>
             Desenvolvedor web, nascido em Criciúma, Santa Catarina, região sul do país

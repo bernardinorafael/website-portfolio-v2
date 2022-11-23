@@ -39,8 +39,8 @@ export const Container = styled.div`
     gap: 0.5rem;
 
     span {
-      background: ${({ theme }) => theme.colors.purple.purple2};
       border-radius: ${({ theme }) => theme.radii.xs};
+      background: ${({ theme }) => theme.colors.purple.purple2};
       border: 1px solid ${({ theme }) => theme.colors.purple.purple6};
       color: ${({ theme }) => theme.colors.purple.purple11};
       font-size: ${({ theme }) => theme.fontSize.xs};
