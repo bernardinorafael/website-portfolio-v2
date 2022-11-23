@@ -6,7 +6,6 @@ import { useRouter } from "next/router"
 import * as Icon from "phosphor-react"
 import ButtonToggleTheme from "../ButtonToggleTheme"
 import PopoverContact from "../PopoverContact"
-import PopoverMoreOptions from "../PopoverMoreOptions"
 import { ActiveLinkNavbar, Button, Container } from "./styles"
 
 export function Header() {
@@ -26,7 +25,12 @@ export function Header() {
           <Link href="/apps" legacyBehavior passHref>
             <ActiveLinkNavbar asPath={asPath}>Apps</ActiveLinkNavbar>
           </Link>
+          <Link href="/projects" legacyBehavior passHref>
+            <ActiveLinkNavbar asPath={asPath}>Projetos</ActiveLinkNavbar>
+          </Link>
+        </nav>
 
+        <div>
           <Popover.Root>
             <Popover.Trigger asChild>
               <Button>
@@ -37,18 +41,8 @@ export function Header() {
             <PopoverContact />
           </Popover.Root>
 
-          <Popover.Root>
-            <Popover.Trigger asChild>
-              <Button>
-                <Icon.DotsThreeOutlineVertical size={20} weight="duotone" />
-              </Button>
-            </Popover.Trigger>
-
-            <PopoverMoreOptions />
-          </Popover.Root>
-        </nav>
-
-        <ButtonToggleTheme />
+          <ButtonToggleTheme />
+        </div>
       </div>
     </Container>
   )

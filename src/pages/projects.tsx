@@ -1,5 +1,6 @@
 import { GetServerSideProps } from "next"
 import Head from "next/head"
+import * as Icon from "phosphor-react"
 import { Repository } from "../@types/repository"
 import CardProject from "../components/CardProject"
 import Title from "../components/Title"
@@ -7,7 +8,7 @@ import { Container } from "../css/pages/projects"
 import { app } from "../services/axios"
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const response = await app.get("/repos?sort=created")
+  const response = await app.get("/repos?sort=pushed&direction=desc&")
 
   const repositories = response.data.map((repository: Repository) => {
     return {
@@ -32,6 +33,10 @@ interface ProjectsProps {
 }
 
 function Projects({ repositories }: ProjectsProps) {
+  function handleBackToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
+
   return (
     <>
       <Head>
@@ -60,6 +65,10 @@ function Projects({ repositories }: ProjectsProps) {
             ) : null
           })}
         </section>
+
+        <button onClick={handleBackToTop} type="button">
+          <Icon.ArrowUp />
+        </button>
       </Container>
     </>
   )

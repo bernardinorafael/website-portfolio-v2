@@ -6,7 +6,7 @@ import Link from "next/link"
 function PopoverContact() {
   return (
     <Popover.Portal>
-      <PopoverContent alignOffset={0} align="start" sideOffset={8}>
+      <PopoverContent alignOffset={-30} align="end" sideOffset={8}>
         <section>
           <Link target="_blank" href="https://github.com/bernardinorafael">
             <ItemPopover>

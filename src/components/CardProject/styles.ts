@@ -39,8 +39,8 @@ export const Container = styled.div`
     gap: 0.5rem;
 
     span {
-      border-radius: ${({ theme }) => theme.radii.xs};
       background: ${({ theme }) => theme.colors.purple.purple2};
+      border-radius: ${({ theme }) => theme.radii.xs};
       border: 1px solid ${({ theme }) => theme.colors.purple.purple6};
       color: ${({ theme }) => theme.colors.purple.purple11};
       font-size: ${({ theme }) => theme.fontSize.xs};
@@ -66,5 +66,21 @@ export const Container = styled.div`
         line-height: 0;
       }
     }
+  }
+`
+
+interface IconHighlightProps {
+  variant?: "TypeScript" | "JavaScript" | string
+}
+
+export const IconHighlight = styled.span<IconHighlightProps>`
+  color: ${({ theme }) => theme.colors.background[400]};
+  font-size: ${({ theme }) => theme.fontSize.xs};
+
+  svg {
+    color: ${(props) =>
+      props.variant === "TypeScript"
+        ? props.theme.colors.red[300]
+        : props.theme.colors.green[300]};
   }
 `

@@ -8,7 +8,7 @@ export const Container = styled.header`
   position: fixed;
   z-index: 100;
 
-  div {
+  > div {
     align-items: center;
     display: flex;
     height: 4rem;
@@ -42,6 +42,12 @@ export const Container = styled.header`
       height: 4rem;
       line-height: 2.25rem;
     }
+  }
+
+  > div div:last-child {
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
   }
 
   @media (max-width: 670px) {
@@ -79,7 +85,7 @@ export const ActiveLinkNavbar = styled.a<ActiveLinkNavbarProps>`
 
 export const Button = styled.button`
   align-items: center;
-  background: ${({ theme }) => theme.colors.background[700]};
+  background: transparent;
   border-radius: ${({ theme }) => theme.radii.sm};
   border: none;
   display: flex;
@@ -90,8 +96,8 @@ export const Button = styled.button`
   width: 2.25rem;
 
   &:hover {
-    filter: brightness(1.1);
-    transition: filter 0.3s;
+    background: ${({ theme }) => theme.colors.background[700]};
+    transition: background-color 0.3s;
   }
 
   svg {

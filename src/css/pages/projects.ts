@@ -27,6 +27,28 @@ export const Container = styled.main`
     margin-top: 3rem;
   }
 
+  button[type="button"] {
+    background: ${({ theme }) => theme.colors.background[700]};
+    border-radius: ${({ theme }) => theme.radii.xs};
+    border: none;
+    bottom: 10px;
+    color: ${({ theme }) => theme.colors.background[100]};
+    line-height: 0;
+    outline: none;
+    padding: 0.5rem;
+    position: fixed;
+    right: 10px;
+
+    &:hover {
+      filter: brightness(1.1);
+      transition: filter 0.2s;
+    }
+
+    @media (max-width: 840px) {
+      display: none;
+    }
+  }
+
   @media (max-width: 670px) {
     margin: 2.5rem auto 7rem;
   }

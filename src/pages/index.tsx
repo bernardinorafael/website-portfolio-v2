@@ -9,7 +9,7 @@ import { Container, ProjectsContainer } from "../css/pages/home"
 import { app } from "../services/axios"
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const response = await app.get('/repos?per_page=3&sort=pushed"')
+  const response = await app.get('/repos?per_page=3&sort=updated&direction=desc&"')
 
   const repositories = response.data.map((repository: Repository) => {
     return {

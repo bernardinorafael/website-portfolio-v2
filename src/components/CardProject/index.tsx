@@ -3,15 +3,15 @@ import { formatDistanceToNow } from "date-fns"
 import ptBR from "date-fns/locale/pt-BR"
 import * as Icon from "phosphor-react"
 import ButtonActionCard from "../ButtonActionCard"
-import { Container } from "./styles"
+import { Container, IconHighlight } from "./styles"
 
 interface CardProjectProps {
   name: string
+  svn_url: string
   topics: string[]
   language: string
   updated_at: Date
   description: string
-  svn_url: string
 }
 
 function CardProject({
@@ -22,15 +22,15 @@ function CardProject({
   updated_at,
   description,
 }: CardProjectProps) {
+  console.log(language)
+
   return (
     <Container>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
         <strong>{name}</strong>
         <ButtonActionCard svnUrl={svn_url} />
       </div>
-
       <span>{description}</span>
-
       <div>
         {topics[0] ? <span>{topics[0]}</span> : null}
         {topics[1] ? <span>{topics[1]}</span> : null}
@@ -39,10 +39,10 @@ function CardProject({
       </div>
 
       <footer>
-        <span>
-          <Icon.Stack weight="fill" />
+        <IconHighlight variant={language}>
+          <Icon.Circle weight="fill" />
           {language}
-        </span>
+        </IconHighlight>
         <span>
           {`Atualizado  ${formatDistanceToNow(new Date(updated_at), {
             addSuffix: true,
