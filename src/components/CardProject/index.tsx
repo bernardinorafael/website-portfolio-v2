@@ -10,7 +10,7 @@ interface CardProjectProps {
   svn_url: string
   topics: string[]
   language: string
-  updated_at: Date
+  created_at: Date
   description: string
 }
 
@@ -19,7 +19,7 @@ function CardProject({
   topics,
   svn_url,
   language,
-  updated_at,
+  created_at,
   description,
 }: CardProjectProps) {
   console.log(language)
@@ -44,7 +44,7 @@ function CardProject({
           {language}
         </IconHighlight>
         <span>
-          {`Atualizado  ${formatDistanceToNow(new Date(updated_at), {
+          {`Criado  ${formatDistanceToNow(new Date(created_at), {
             addSuffix: true,
             locale: ptBR,
           })}`}
