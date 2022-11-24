@@ -10,7 +10,7 @@ interface PopoverContactProps {
 function PopoverContact({ handleClosePopover }: PopoverContactProps) {
   return (
     <Popover.Portal>
-      <PopoverContent alignOffset={-30} align="end" sideOffset={8}>
+      <PopoverContent alignOffset={-30} align="end" sideOffset={0}>
         <section>
           <Link
             onClick={handleClosePopover}

@@ -10,7 +10,7 @@ import PopoverContact from "../PopoverContact"
 import { ActiveLinkNavbar, Button, Container } from "./styles"
 
 export function Header() {
-  const [open, setOpen] = useState<boolean>(true)
+  const [open, setOpen] = useState<boolean>(false)
   const { asPath } = useRouter()
 
   function handleClosePopover() {
