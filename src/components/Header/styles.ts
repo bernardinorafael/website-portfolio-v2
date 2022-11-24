@@ -63,9 +63,10 @@ export const ActiveLinkNavbar = styled.a<ActiveLinkNavbarProps>`
     props.asPath === props.href
       ? props.theme.colors.white
       : props.theme.colors.background[300]};
+
   font-size: ${({ theme }) => theme.fontSize.sm};
   font-weight: ${({ theme }) => theme.fontWeight.semibold};
-  padding: 0 0.5rem;
+  padding: 0.125rem 0.5rem;
   position: relative;
 
   &::after {
@@ -85,7 +86,7 @@ export const ActiveLinkNavbar = styled.a<ActiveLinkNavbarProps>`
   }
 
   &:focus {
-    box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.violet[200]};
+    box-shadow: 0 0 0 1px ${({ theme }) => theme.colors.violet[200]};
   }
 `
 
