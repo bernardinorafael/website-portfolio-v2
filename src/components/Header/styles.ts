@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const Container = styled.header`
   background: ${({ theme }) => theme.colors.background[900]};
   border-bottom: 1px solid ${({ theme }) => theme.colors.background[700]};
-  height: 4rem;
+  height: 3rem;
   inset: 0;
   position: fixed;
   z-index: 100;
@@ -11,7 +11,7 @@ export const Container = styled.header`
   > div {
     align-items: center;
     display: flex;
-    height: 4rem;
+    height: inherit;
     justify-content: space-between;
     margin: 0 auto;
     max-width: 780px;
@@ -39,8 +39,6 @@ export const Container = styled.header`
       align-items: center;
       display: flex;
       gap: 1rem;
-      height: 4rem;
-      line-height: 2.25rem;
     }
   }
 
@@ -60,26 +58,34 @@ interface ActiveLinkNavbarProps {
 }
 
 export const ActiveLinkNavbar = styled.a<ActiveLinkNavbarProps>`
-  border-radius: ${({ theme }) => theme.radii.xs};
+  background: transparent;
+  color: ${(props) =>
+    props.asPath === props.href
+      ? props.theme.colors.white
+      : props.theme.colors.background[300]};
   font-size: ${({ theme }) => theme.fontSize.sm};
   font-weight: ${({ theme }) => theme.fontWeight.semibold};
   padding: 0 0.5rem;
-  color: ${(props) =>
-    props.asPath === props.href
-      ? props.theme.colors.background[100]
-      : props.theme.colors.background[400]};
+  position: relative;
 
-  background: ${(props) =>
-    props.asPath === props.href ? props.theme.colors.background[700] : "transparent"};
-
-  &:focus {
-    box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.violet[200]};
+  &::after {
+    bottom: -14px;
+    background: ${(props) =>
+      props.asPath === props.href ? props.theme.colors.violet[200] : "transparent"};
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    width: 100%;
   }
 
   &:hover {
-    background: ${({ theme }) => theme.colors.background[700]};
-    color: ${({ theme }) => theme.colors.background[100]};
-    transition: background-color 0.3s, color 0.3s;
+    color: ${({ theme }) => theme.colors.white};
+    transition: color 0.2s;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.violet[200]};
   }
 `
 
@@ -89,11 +95,11 @@ export const Button = styled.button`
   border-radius: ${({ theme }) => theme.radii.sm};
   border: none;
   display: flex;
-  height: 2.25rem;
+  height: 2rem;
   justify-content: center;
   line-height: 0;
   outline: none;
-  width: 2.25rem;
+  width: 2rem;
 
   &:hover {
     background: ${({ theme }) => theme.colors.background[700]};

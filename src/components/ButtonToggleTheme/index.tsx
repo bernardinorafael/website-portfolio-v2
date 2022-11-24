@@ -20,13 +20,13 @@ function ButtonToggleTheme({ ...props }: ButtonToggleThemeProps) {
         {!toggleButtonIcon ? (
           <Icon.Sun
             className="animate__animated animate__bounceIn animate__faster"
-            size={20}
+            size={18}
             weight="duotone"
           />
         ) : (
           <Icon.MoonStars
             className="animate__animated animate__bounceIn animate__faster"
-            size={20}
+            size={18}
             weight="duotone"
           />
         )}

@@ -4,18 +4,24 @@ import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import * as Icon from "phosphor-react"
+import { useState } from "react"
 import ButtonToggleTheme from "../ButtonToggleTheme"
 import PopoverContact from "../PopoverContact"
 import { ActiveLinkNavbar, Button, Container } from "./styles"
 
 export function Header() {
+  const [open, setOpen] = useState<boolean>(true)
   const { asPath } = useRouter()
+
+  function handleClosePopover() {
+    setOpen(false)
+  }
 
   return (
     <Container>
       <div>
         <Link href="/">
-          <Image src="/images/header-image.png" height={36} width={36} alt="" />
+          <Image src="/images/header-image.png" height={28} width={28} alt="" />
         </Link>
 
         <nav>
@@ -31,14 +37,14 @@ export function Header() {
         </nav>
 
         <div>
-          <Popover.Root>
+          <Popover.Root open={open} onOpenChange={setOpen}>
             <Popover.Trigger asChild>
               <Button>
-                <Icon.User size={20} weight="duotone" />
+                <Icon.User size={18} weight="duotone" />
               </Button>
             </Popover.Trigger>
 
-            <PopoverContact />
+            <PopoverContact handleClosePopover={handleClosePopover} />
           </Popover.Root>
 
           <ButtonToggleTheme />

@@ -25,7 +25,7 @@ function DialogContactMobile() {
               <div>
                 <strong>
                   GitHub
-                  <Icon.ArrowSquareOut weight="thin" size={16} />
+                  <Icon.ArrowUpRight weight="regular" size={14} />
                 </strong>
                 <p>Acompanhe meus projetos diretamente no GitHub.</p>
               </div>
@@ -40,7 +40,7 @@ function DialogContactMobile() {
               <div>
                 <strong>
                   LinkedIn
-                  <Icon.ArrowSquareOut weight="thin" size={16} />
+                  <Icon.ArrowUpRight weight="regular" size={14} />
                 </strong>
                 <p>Conecte-se profissionalmente comigo no LinkedIn.</p>
               </div>
@@ -55,7 +55,7 @@ function DialogContactMobile() {
               <div>
                 <strong>
                   Twitter
-                  <Icon.ArrowSquareOut weight="thin" size={16} />
+                  <Icon.ArrowUpRight weight="regular" size={14} />
                 </strong>
                 <p>Encontre-me na rede social do passarinho.</p>
               </div>

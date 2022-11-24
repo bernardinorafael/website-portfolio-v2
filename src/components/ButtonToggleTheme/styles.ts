@@ -7,11 +7,11 @@ export const Button = styled.button`
   border: none;
   display: flex;
   gap: 1rem;
-  height: 2.25rem;
+  height: 2rem;
   justify-content: center;
   line-height: 0;
   outline: none;
-  width: 2.25rem;
+  width: 2rem;
 
   &:hover {
     background: ${({ theme }) => theme.colors.background[700]};

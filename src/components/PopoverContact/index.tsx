@@ -3,44 +3,60 @@ import { ItemPopover, PopoverContent } from "./styles"
 import * as Icon from "phosphor-react"
 import Link from "next/link"
 
-function PopoverContact() {
+interface PopoverContactProps {
+  handleClosePopover: () => void
+}
+
+function PopoverContact({ handleClosePopover }: PopoverContactProps) {
   return (
     <Popover.Portal>
       <PopoverContent alignOffset={-30} align="end" sideOffset={8}>
         <section>
-          <Link target="_blank" href="https://github.com/bernardinorafael">
+          <Link
+            onClick={handleClosePopover}
+            target="_blank"
+            href="https://github.com/bernardinorafael"
+          >
             <ItemPopover>
-              <Icon.GithubLogo weight="duotone" size={28} />
+              <Icon.GithubLogo weight="duotone" size={24} />
               <div>
                 <strong>
                   GitHub
-                  <Icon.ArrowSquareOut weight="regular" size={16} />
+                  <Icon.ArrowUpRight weight="regular" size={14} />
                 </strong>
                 <p>Acompanhe meus projetos diretamente no GitHub.</p>
               </div>
             </ItemPopover>
           </Link>
 
-          <Link target="_blank" href="https://www.linkedin.com/in/eurafaelbernardino/">
+          <Link
+            onClick={handleClosePopover}
+            target="_blank"
+            href="https://www.linkedin.com/in/eurafaelbernardino/"
+          >
             <ItemPopover>
-              <Icon.LinkedinLogo weight="duotone" size={28} />
+              <Icon.LinkedinLogo weight="duotone" size={24} />
               <div>
                 <strong>
                   LinkedIn
-                  <Icon.ArrowSquareOut weight="regular" size={16} />
+                  <Icon.ArrowUpRight weight="regular" size={14} />
                 </strong>
                 <p>Conecte-se profissionalmente comigo no LinkedIn.</p>
               </div>
             </ItemPopover>
           </Link>
 
-          <Link target="_blank" href="https://twitter.com/orafabernardino">
+          <Link
+            onClick={handleClosePopover}
+            target="_blank"
+            href="https://twitter.com/orafabernardino"
+          >
             <ItemPopover>
-              <Icon.TwitterLogo weight="duotone" size={28} />
+              <Icon.TwitterLogo weight="duotone" size={24} />
               <div>
                 <strong>
                   Twitter
-                  <Icon.ArrowSquareOut weight="regular" size={16} />
+                  <Icon.ArrowUpRight weight="regular" size={14} />
                 </strong>
                 <p>Encontre-me na rede social do passarinho.</p>
               </div>

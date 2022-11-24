@@ -14,15 +14,14 @@ const fadeAnimation = keyframes`
 `
 
 export const PopoverContent = styled(Popover.Content)`
+  animation: ${fadeAnimation} 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   background: ${({ theme }) => theme.colors.background[800]};
   border-radius: ${({ theme }) => theme.radii.xs};
   border: 1px solid ${({ theme }) => theme.colors.background[700]};
   box-shadow: 0 10px 20px -8px rgb(0 0 0 / 75%);
+  transform-origin: var(--radix-popover-content-transform-origin);
   user-select: none;
   z-index: 101;
-
-  animation: ${fadeAnimation} 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  transform-origin: var(--radix-popover-content-transform-origin);
 
   &:focus {
     box-shadow: 4px 6px 20px -8px rgb(0 0 0 / 75%);
