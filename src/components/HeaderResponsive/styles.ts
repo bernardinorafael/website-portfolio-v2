@@ -16,6 +16,7 @@ export const Container = styled.header`
 
     section {
       display: grid;
+      gap: 1rem;
       grid-template-columns: repeat(2, 1fr);
       height: 4rem;
       padding-top: 0.5rem;

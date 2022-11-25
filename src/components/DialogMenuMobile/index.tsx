@@ -5,7 +5,11 @@ import * as Icon from "phosphor-react"
 import ButtonToggleTheme from "../ButtonToggleTheme"
 import { DialogClose, DialogContent, DialogOverlay } from "./styles"
 
-function DialogMenuMobile() {
+interface DialogMenuMobileProps {
+  handleCloseDialogMenu: () => void
+}
+
+function DialogMenuMobile({ handleCloseDialogMenu }: DialogMenuMobileProps) {
   return (
     <Dialog.Portal>
       <DialogOverlay />
@@ -21,22 +25,22 @@ function DialogMenuMobile() {
           </DialogClose>
         </div>
 
-        <Link href="/projects">
+        <Link onClick={handleCloseDialogMenu} href="/projects">
           <Icon.Stack weight="duotone" size={28} />
           <strong>Projetos</strong>
         </Link>
 
-        <Link href="/about">
+        <Link onClick={handleCloseDialogMenu} href="/about">
           <Icon.IdentificationBadge weight="duotone" size={28} />
           <strong>Sobre mim</strong>
         </Link>
 
-        <Link href="/apps">
+        <Link onClick={handleCloseDialogMenu} href="/apps">
           <Icon.Wrench weight="duotone" size={28} />
           <strong>Apps</strong>
         </Link>
 
-        <Link href="/">
+        <Link onClick={handleCloseDialogMenu} href="/">
           <Icon.House weight="duotone" size={28} />
           <strong>Início</strong>
         </Link>

@@ -4,7 +4,11 @@ import Link from "next/link"
 import * as Icon from "phosphor-react"
 import { DialogClose, DialogContent, DialogOverlay, ItemContact } from "./styles"
 
-function DialogContactMobile() {
+interface DialogContactMobileProps {
+  handleCloseDialogContact: () => void
+}
+
+function DialogContactMobile({ handleCloseDialogContact }: DialogContactMobileProps) {
   return (
     <Dialog.Portal>
       <DialogOverlay />
@@ -18,7 +22,11 @@ function DialogContactMobile() {
           </DialogClose>
         </div>
 
-        <Link target="_blank" href="https://github.com/bernardinorafael">
+        <Link
+          target="_blank"
+          onClick={handleCloseDialogContact}
+          href="https://github.com/bernardinorafael"
+        >
           <ItemContact>
             <div>
               <Icon.GithubLogo weight="duotone" size={28} />
@@ -33,7 +41,11 @@ function DialogContactMobile() {
           </ItemContact>
         </Link>
 
-        <Link target="_blank" href="https://www.linkedin.com/in/eurafaelbernardino/">
+        <Link
+          target="_blank"
+          onClick={handleCloseDialogContact}
+          href="https://www.linkedin.com/in/eurafaelbernardino/"
+        >
           <ItemContact>
             <div>
               <Icon.LinkedinLogo weight="duotone" size={28} />
@@ -48,7 +60,11 @@ function DialogContactMobile() {
           </ItemContact>
         </Link>
 
-        <Link target="_blank" href="https://twitter.com/orafabernardino">
+        <Link
+          target="_blank"
+          onClick={handleCloseDialogContact}
+          href="https://twitter.com/orafabernardino"
+        >
           <ItemContact>
             <div>
               <Icon.TwitterLogo weight="duotone" size={28} />
