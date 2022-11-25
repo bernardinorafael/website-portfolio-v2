@@ -22,8 +22,6 @@ function CardProject({
   created_at,
   description,
 }: CardProjectProps) {
-  console.log(language)
-
   return (
     <Container>
       <div style={{ display: "flex", justifyContent: "space-between" }}>
