@@ -27,7 +27,7 @@ export const getStaticProps: GetStaticProps = async () => {
       repositories,
     },
 
-    revalidate: 60 * 60 * 48, // 2 days
+    revalidate: 60 * 60 * 24, // 1 day
   }
 }
 

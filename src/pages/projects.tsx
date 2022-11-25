@@ -8,7 +8,7 @@ import { Container } from "../css/pages/projects"
 import { app } from "../services/axios"
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await app.get("/repos?sort=pushed&direction=desc&")
+  const response = await app.get("/repos?sort=created&direction=desc&")
 
   const repositories = response.data.map((repository: Repository) => {
     return {
@@ -26,7 +26,7 @@ export const getStaticProps: GetStaticProps = async () => {
       repositories,
     },
 
-    revalidate: 60 * 60 * 48, // 2 days
+    revalidate: 60 * 60 * 24, // 1 day
   }
 }
 
