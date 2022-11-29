@@ -9,7 +9,7 @@ import ButtonToggleTheme from "../ButtonToggleTheme"
 import PopoverContact from "../PopoverContact"
 import { ActiveLinkNavbar, Button, Container } from "./styles"
 
-export function Header() {
+function Header() {
   const [open, setOpen] = useState<boolean>(false)
   const { asPath } = useRouter()
 

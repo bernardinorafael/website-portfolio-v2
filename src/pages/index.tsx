@@ -27,15 +27,15 @@ export const getStaticProps: GetStaticProps = async () => {
       repositories,
     },
 
-    revalidate: 60 * 60 * 24, // 1 day
+    revalidate: 60 * 60 * 6, // 6 h
   }
 }
 
-interface HomeProps {
+interface HomeScreenProps {
   repositories: Repository[]
 }
 
-function Home({ repositories }: HomeProps) {
+export default function HomeScreen({ repositories }: HomeScreenProps) {
   return (
     <>
       <Head>
@@ -83,5 +83,3 @@ function Home({ repositories }: HomeProps) {
     </>
   )
 }
-
-export default Home
