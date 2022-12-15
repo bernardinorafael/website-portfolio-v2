@@ -34,7 +34,7 @@ export const Container = styled.main`
 
       @media (max-width: 670px) {
         text-align: center;
-				font-size: ${({ theme }) => theme.fontSize.md};
+        font-size: ${({ theme }) => theme.fontSize.md};
       }
     }
   }
@@ -69,6 +69,8 @@ export const ProjectsContainer = styled.section`
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(1, 1fr);
+
+  /* &:has(div:hover) div:not(:hover) {} */
 `
 
 export const Project = styled.div`

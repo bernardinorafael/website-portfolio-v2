@@ -1,11 +1,11 @@
-import { GetStaticProps } from "next"
-import Head from "next/head"
-import * as Icon from "phosphor-react"
-import { Repository } from "../@types/repository"
-import CardProject from "../components/CardProject"
-import Title from "../components/Title"
-import { Container } from "../css/pages/projects"
-import { app } from "../services/axios"
+import { GetStaticProps } from 'next'
+import Head from 'next/head'
+import { ArrowUp } from 'phosphor-react'
+import { Repository } from '../@types/repository'
+import CardProject from '../components/CardProject'
+import Title from '../components/Title'
+import { Container } from '../css/pages/projects'
+import { app } from '../services/axios'
 
 export const getStaticProps: GetStaticProps = async () => {
   const response = await app.get('/repos?&sort=created&direction=desc&"')
@@ -18,6 +18,7 @@ export const getStaticProps: GetStaticProps = async () => {
       language: repository.language,
       created_at: repository.created_at,
       description: repository.description,
+      homepage: repository.homepage,
     }
   })
 
@@ -30,13 +31,13 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-interface ProjectsProps {
+type ProjectsProps = {
   repositories: Repository[]
 }
 
 function Projects({ repositories }: ProjectsProps) {
   function handleBackToTop() {
-    window.scrollTo({ top: 0, behavior: "smooth" })
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   return (
@@ -48,19 +49,20 @@ function Projects({ repositories }: ProjectsProps) {
       <Container>
         <Title>Meus projetos</Title>
         <p>
-          Nesta seção temos um resumo de meus projetos armazenados e documentados <br /> no
-          GitHub, passe o mouse para mais ações.
+          Nesta seção temos um resumo de meus projetos armazenados e documentados <br />{' '}
+          no GitHub, passe o mouse para mais ações.
         </p>
 
         <section>
           {repositories?.map((repository) => {
-            return repository.name !== "bernardinorafael" ? (
+            return repository.name !== 'bernardinorafael' ? (
               <CardProject
                 key={repository.id}
                 name={repository.name}
                 topics={repository.topics}
                 svn_url={repository.svn_url}
                 language={repository.language}
+                homepage={repository.homepage}
                 created_at={repository.created_at}
                 description={repository.description}
               />
@@ -69,7 +71,7 @@ function Projects({ repositories }: ProjectsProps) {
         </section>
 
         <button onClick={handleBackToTop} type="button">
-          <Icon.ArrowUp />
+          <ArrowUp />
         </button>
       </Container>
     </>

@@ -13,6 +13,12 @@ export const Container = styled.div`
   transition: 0.3s, opacity 0.5s;
   user-select: none;
 
+  > div div {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
   &:hover {
     box-shadow: 4px 6px 12px -8px rgb(0 0 0 / 75%);
     transform: translateY(-2px);

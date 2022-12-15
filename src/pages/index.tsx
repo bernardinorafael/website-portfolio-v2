@@ -19,6 +19,7 @@ export const getStaticProps: GetStaticProps = async () => {
       language: repository.language,
       created_at: repository.created_at,
       description: repository.description,
+      homepage: repository.homepage,
     }
   })
 
@@ -49,9 +50,9 @@ export default function HomeScreen({ repositories }: HomeScreenProps) {
           <p>
             Desenvolvedor web, nascido em Criciúma, Santa Catarina, região sul do país
             <br />e atualmente morando em Sobral, Ceará. Meu contato com a tecnologia veio
-            desde cedo, minha família sempre foi envolvida com a informática. Já estive na área
-            têxtil, um segmento onde a indústria é bem estabelecida em Santa Catarina, porém no
-            decorrer do tempo, me reencontrei na área da tecnologia.
+            desde cedo, minha família sempre foi envolvida com a informática. Já estive na
+            área têxtil, um segmento onde a indústria é bem estabelecida em Santa
+            Catarina, porém no decorrer do tempo, me reencontrei na área da tecnologia.
           </p>
         </section>
 
@@ -67,6 +68,7 @@ export default function HomeScreen({ repositories }: HomeScreenProps) {
                   topics={repository.topics}
                   svn_url={repository.svn_url}
                   language={repository.language}
+                  homepage={repository.homepage}
                   created_at={repository.created_at}
                   description={repository.description}
                 />

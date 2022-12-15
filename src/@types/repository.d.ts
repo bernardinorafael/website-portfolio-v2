@@ -7,4 +7,5 @@ export interface Repository {
   svn_url: string
   topics: string[]
   created_at: Date
+	homepage: string
 }

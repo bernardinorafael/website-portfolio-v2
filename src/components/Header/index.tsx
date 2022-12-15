@@ -3,7 +3,7 @@ import "animate.css"
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/router"
-import * as Icon from "phosphor-react"
+import { User } from "phosphor-react"
 import { useState } from "react"
 import ButtonToggleTheme from "../ButtonToggleTheme"
 import PopoverContact from "../PopoverContact"
@@ -40,7 +40,7 @@ function Header() {
           <Popover.Root open={open} onOpenChange={setOpen}>
             <Popover.Trigger asChild>
               <Button>
-                <Icon.User size={18} weight="duotone" />
+                <User size={16} weight="regular" />
               </Button>
             </Popover.Trigger>
 

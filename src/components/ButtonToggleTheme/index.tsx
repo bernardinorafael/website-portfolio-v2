@@ -1,9 +1,11 @@
-import { ButtonHTMLAttributes, useContext, useState } from "react"
-import * as Icon from "phosphor-react"
-import { Button } from "./styles"
-import { GlobalContext } from "../../context/GlobalContext"
+import { ButtonHTMLAttributes, useContext, useState } from 'react'
+import { GlobalContext } from '../../context/GlobalContext'
 
-interface ButtonToggleThemeProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
+import { MoonStars, Sun } from 'phosphor-react'
+import { Button } from './styles'
+
+interface ButtonToggleThemeProps
+  extends ButtonHTMLAttributes<HTMLButtonElement> {}
 
 function ButtonToggleTheme({ ...props }: ButtonToggleThemeProps) {
   const { toggleTheme } = useContext(GlobalContext)
@@ -18,16 +20,16 @@ function ButtonToggleTheme({ ...props }: ButtonToggleThemeProps) {
     <>
       <Button {...props} onClick={handleToggleThemeButton}>
         {!toggleButtonIcon ? (
-          <Icon.Sun
+          <Sun
+            size={16}
+            weight="regular"
             className="animate__animated animate__bounceIn animate__faster"
-            size={18}
-            weight="duotone"
           />
         ) : (
-          <Icon.MoonStars
+          <MoonStars
+            size={16}
+            weight="regular"
             className="animate__animated animate__bounceIn animate__faster"
-            size={18}
-            weight="duotone"
           />
         )}
         <span>Alterar tema</span>

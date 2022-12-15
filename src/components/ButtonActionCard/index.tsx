@@ -1,18 +1,25 @@
-import { Container } from "./styles"
-import * as Icon from "phosphor-react"
-import Link from "next/link"
+import Link from 'next/link'
+import { GithubLogo } from 'phosphor-react'
+import { Container } from './styles'
+import * as TooltipComponent from '@radix-ui/react-tooltip'
+import Tooltip from '../Tooltip'
 
-interface ButtonActionCardProps {
+type ButtonActionCardProps = {
   svnUrl: string
 }
 
 function ButtonActionCard({ svnUrl }: ButtonActionCardProps) {
   return (
     <Container>
-      <Link rel="external" target="_blank" href={svnUrl}>
-        Ver no GitHub
-        <Icon.Link weight="fill" />
-      </Link>
+      <TooltipComponent.Root>
+        <TooltipComponent.Trigger asChild>
+          <Link rel="external" target="_blank" href={svnUrl}>
+            <GithubLogo size={20} weight="fill" />
+          </Link>
+        </TooltipComponent.Trigger>
+
+        <Tooltip content="Acessar GitHub" />
+      </TooltipComponent.Root>
     </Container>
   )
 }
