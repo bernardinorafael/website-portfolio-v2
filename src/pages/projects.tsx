@@ -8,7 +8,7 @@ import { Container } from '../css/pages/projects'
 import { app } from '../services/axios'
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await app.get('/repos?&sort=created&direction=desc&"')
+  const response = await app.get('/repos?&sort=created&direction=desc&')
 
   const repositories = response.data.map((repository: Repository) => {
     return {
@@ -35,7 +35,7 @@ type ProjectsProps = {
   repositories: Repository[]
 }
 
-function Projects({ repositories }: ProjectsProps) {
+export default function Projects({ repositories }: ProjectsProps) {
   function handleBackToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
@@ -49,8 +49,8 @@ function Projects({ repositories }: ProjectsProps) {
       <Container>
         <Title>Meus projetos</Title>
         <p>
-          Nesta seção temos um resumo de meus projetos armazenados e documentados <br />{' '}
-          no GitHub, passe o mouse para mais ações.
+          Nesta seção temos um resumo de meus projetos armazenados e
+          documentados <br /> no GitHub, passe o mouse para mais ações.
         </p>
 
         <section>
@@ -77,5 +77,3 @@ function Projects({ repositories }: ProjectsProps) {
     </>
   )
 }
-
-export default Projects

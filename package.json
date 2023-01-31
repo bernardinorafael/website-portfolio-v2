@@ -24,12 +24,14 @@
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^3.7.1",
     "@rocketseat/eslint-config": "^1.1.3",
     "@types/node": "^18.0.0",
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.5",
     "@types/styled-components": "^5.1.25",
     "eslint": "^8.27.0",
+    "prettier": "^2.8.3",
     "typescript": "^4.7.4"
   }
 }

@@ -1,6 +1,6 @@
-import { AxiosRequestConfig } from "axios"
-import { useEffect, useState } from "react"
-import { app } from "../services/axios"
+import { AxiosRequestConfig } from 'axios'
+import { useEffect, useState } from 'react'
+import { app } from '../services/axios'
 
 function useRequest<T = unknown>(url: string, options?: AxiosRequestConfig) {
   const [data, setData] = useState<T | null>(null)

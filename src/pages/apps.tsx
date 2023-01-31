@@ -10,7 +10,7 @@ import {
   TabsTrigger,
 } from '../css/pages/apps'
 
-function Apps() {
+export default function Apps() {
   return (
     <>
       <Head>
@@ -62,13 +62,6 @@ function Apps() {
                 style={{ background: '#396bdf30' }}
                 strong="TypeScript"
                 p="Principal linguagem de programação"
-              />
-
-              <AppsCards
-                src="/icons/mongodb-icon.svg"
-                style={{ background: '#e1e1e6' }}
-                strong="MongoDB"
-                p="Em fase de aprendizado"
               />
 
               <AppsCards
@@ -211,5 +204,3 @@ function Apps() {
     </>
   )
 }
-
-export default Apps
