@@ -34,7 +34,7 @@ export const getStaticProps: GetStaticProps = async () => {
       repositories,
     },
 
-    revalidate: 60 * 60 * 6, // 6 h
+    revalidate: 1000 * 60 * 30, // 30min
   }
 }
 
@@ -52,15 +52,13 @@ export default function HomeScreen({ repositories }: HomeScreenProps) {
       <Container>
         <section>
           <Title>Hello! I&apos;m Rafael</Title>
-
           <p>
-            Desenvolvedor web, nascido em Criciúma, Santa Catarina, região sul do
-            país
-            <br />e atualmente morando em Sobral, Ceará. Meu contato com a tecnologia
-            veio desde cedo, minha família sempre foi envolvida com a informática. Já
-            estive na área têxtil, um segmento onde a indústria é bem estabelecida em
-            Santa Catarina, porém no decorrer do tempo, me reencontrei na área da
-            tecnologia.
+            Nascido Criciúma, uma cidade na região sul de Santa Catarina e atualmente
+            residindo em Sobral, no Ceará. Desde criança, fui exposto à tecnologia
+            por meio da minha família, que sempre esteve envolvida nesse universo.
+            Embora eu tenha trabalhado anteriormente na indústria têxtil, que é um
+            setor importante na região sul do Brasil, descobri que meu verdadeiro
+            interesse está na área de tecnologia e, por isso, retornei a este mundo.
           </p>
         </section>
 

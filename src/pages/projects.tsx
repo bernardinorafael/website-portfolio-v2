@@ -8,9 +8,14 @@ import { Container } from '../css/pages/projects'
 import { app } from '../services/axios'
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await app.get('/repos?&sort=created&direction=desc&')
+  const { data } = await app.get('/repos', {
+    params: {
+      sort: 'created',
+      direction: 'desc',
+    },
+  })
 
-  const repositories = response.data.map((repository: Repository) => {
+  const repositories = data.map((repository: Repository) => {
     return {
       name: repository.name,
       topics: repository.topics,
@@ -27,7 +32,7 @@ export const getStaticProps: GetStaticProps = async () => {
       repositories,
     },
 
-    revalidate: 60 * 60 * 6, // 6h
+    revalidate: 1000 * 60 * 30, // 30min
   }
 }
 
@@ -49,8 +54,8 @@ export default function Projects({ repositories }: ProjectsProps) {
       <Container>
         <Title>Meus projetos</Title>
         <p>
-          Nesta seção temos um resumo de meus projetos armazenados e
-          documentados <br /> no GitHub, passe o mouse para mais ações.
+          Nesta seção temos um resumo de meus projetos armazenados e documentados{' '}
+          <br /> no GitHub, passe o mouse para mais ações.
         </p>
 
         <section>

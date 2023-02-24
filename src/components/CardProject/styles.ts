@@ -10,7 +10,7 @@ export const Container = styled.div`
   overflow: hidden;
   padding: 1rem;
   position: relative;
-  transition: 0.3s, opacity 0.5s;
+  transition: all 400ms;
   user-select: none;
 
   > div div {
@@ -20,8 +20,8 @@ export const Container = styled.div`
   }
 
   &:hover {
-    box-shadow: 4px 6px 12px -8px rgb(0 0 0 / 75%);
-    transform: translateY(-2px);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    transform: translateY(-4px);
 
     > div div {
       opacity: 1;

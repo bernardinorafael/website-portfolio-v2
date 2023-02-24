@@ -10,6 +10,8 @@ export const AppCardBox = styled.div`
   align-items: start;
   gap: 1.5rem;
   min-height: 200px;
+  transition: all 400ms;
+  user-select: none;
 
   strong {
     font-size: 1.775rem;
@@ -18,6 +20,15 @@ export const AppCardBox = styled.div`
 
   span {
     color: ${(props) => props.theme.colors.background[300]};
+  }
+
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    transform: translateY(-4px);
+
+    > div div {
+      opacity: 1;
+    }
   }
 `
 
