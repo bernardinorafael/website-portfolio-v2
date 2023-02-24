@@ -4,8 +4,7 @@ import { GlobalContext } from '../../context/GlobalContext'
 import { MoonStars, Sun } from 'phosphor-react'
 import { Button } from './styles'
 
-interface ButtonToggleThemeProps
-  extends ButtonHTMLAttributes<HTMLButtonElement> {}
+interface ButtonToggleThemeProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
 
 function ButtonToggleTheme({ ...props }: ButtonToggleThemeProps) {
   const { toggleTheme } = useContext(GlobalContext)
@@ -21,13 +20,13 @@ function ButtonToggleTheme({ ...props }: ButtonToggleThemeProps) {
       <Button {...props} onClick={handleToggleThemeButton}>
         {!toggleButtonIcon ? (
           <Sun
-            size={16}
+            size={20}
             weight="regular"
             className="animate__animated animate__bounceIn animate__faster"
           />
         ) : (
           <MoonStars
-            size={16}
+            size={20}
             weight="regular"
             className="animate__animated animate__bounceIn animate__faster"
           />

@@ -1,14 +1,7 @@
 import Head from 'next/head'
-import { Code, Desktop, Globe } from 'phosphor-react'
-import AppsCards from '../components/AppsCards'
+import AppCard from '../components/AppsCards'
 import Title from '../components/Title'
-import {
-  Container,
-  TabsContent,
-  TabsList,
-  TabsRoot,
-  TabsTrigger,
-} from '../css/pages/apps'
+import { ContainerBox, AppsContentBox } from '../css/pages/apps'
 
 export default function Apps() {
   return (
@@ -17,190 +10,62 @@ export default function Apps() {
         <title>Apps | Rafael Bernardino</title>
       </Head>
 
-      <Container>
-        <Title>Ferramentas</Title>
+      <ContainerBox>
+        <Title>Stacks</Title>
+        <p>Um breve resumo das tecnologias em que utilizo no dia-a-dia.</p>
+
+        <AppsContentBox>
+          <AppCard
+            title="TypeScript"
+            href="https://www.typescriptlang.org"
+            textHref="typescriptlang.org"
+            imageUrl="/icons/typescript.svg"
+            description="Em conjunto com o JavaScript, é minha linguagem de programação. Em ambiente Front-end e Back-end."
+          />
+          <AppCard
+            title="React"
+            href="https://reactjs.org"
+            textHref="reactjs.org"
+            imageUrl="/icons/react.svg"
+            description="React e seu ecossistema de bibliotecas é a principal maneira de construção de interfaces que venho utilizando."
+          />
+          <AppCard
+            title="Next.js"
+            href="https://nextjs.org"
+            textHref="nextjs.org"
+            imageUrl="/icons/nextjs.svg"
+            description="Framework de React, grande destaque quando falamos de SSR."
+          />
+          <AppCard
+            title="Node.js"
+            href="https://nodejs.org/en/"
+            textHref="nodejs.org"
+            imageUrl="/icons/nodejs.svg"
+            description="Através do Node.js, fazemos a construção de APIs utilizando TypeScript para consumos externos."
+          />
+          <AppCard
+            title="MySQL"
+            href="https://www.mysql.com"
+            textHref="mysql.com"
+            imageUrl="/icons/mysql.svg"
+            description="MySQL atualmente é meu principal banco de dados em que venho aplicando em projetos reais."
+          />
+          <AppCard
+            title="Prisma"
+            href="https://www.prisma.io"
+            textHref="prisma.io"
+            imageUrl="/icons/prisma.svg"
+            description="ORM para otimização da escrita SQL, em conjunto com Node.js e MySQL. Também já realizei projetos com outros similares, como Knex e Sequelize."
+          />
+        </AppsContentBox>
+
         <p>
-          Aqui está uma lista de ferramentas, extensões e stacks que eu uso no
-          meu dia a dia, deixo também como recomendação experimentá-las.
+          Além das tecnologias acimas citadas, tenho proficiência em demais outras
+          ferramentas do ecossistema de desenvolvimento de software, tais como Zod,
+          React-Hook-Form, React-Query, React-Hooks, MaterialUI, Tailwindcss, consumo
+          de API-Rest, Express, Fastify e etc...
         </p>
-
-        <TabsRoot defaultValue="stacks">
-          <TabsList>
-            <TabsTrigger value="stacks">
-              Stacks
-              <Code size={24} weight="duotone" />
-            </TabsTrigger>
-
-            <TabsTrigger value="desktop">
-              Desktop
-              <Desktop size={24} weight="duotone" />
-            </TabsTrigger>
-            <TabsTrigger value="web">
-              Web
-              <Globe size={24} weight="duotone" />
-            </TabsTrigger>
-          </TabsList>
-
-          <TabsContent value="stacks">
-            <div>
-              <AppsCards
-                src="/icons/html-5.svg"
-                style={{ background: '#ff6c3730' }}
-                strong="HTML"
-                p="HTML semântico e SEO"
-              />
-
-              <AppsCards
-                src="/icons/css-3.svg"
-                style={{ background: '#396bdf30' }}
-                strong="CSS"
-                p="100%"
-              />
-
-              <AppsCards
-                src="/icons/typescript.svg"
-                style={{ background: '#396bdf30' }}
-                strong="TypeScript"
-                p="Principal linguagem de programação"
-              />
-
-              <AppsCards
-                src="/icons/nextjs-icon.svg"
-                style={{ background: '#e1e1e630' }}
-                strong="Next.js"
-                p="Utilizo na grande maioria dos meus projetos"
-              />
-
-              <AppsCards
-                src="/icons/react.svg"
-                style={{ background: '#189c9930' }}
-                strong="React"
-                p="É minha principal ferramenta de interfaces"
-              />
-
-              <AppsCards
-                src="/icons/styled-components.png"
-                style={{ background: '#df39b830' }}
-                strong="Styled Components"
-                p="É utilizado em 90% dos meus projetos"
-              />
-
-              <AppsCards
-                src="/icons/golang-1.svg"
-                style={{ background: '#18269c30' }}
-                strong="Golang"
-                p="Em 2023 será iniciado estudos em Go"
-              />
-            </div>
-          </TabsContent>
-
-          <TabsContent value="desktop">
-            <div>
-              <AppsCards
-                src="/icons/visual-studio-code.svg"
-                style={{ background: '' }}
-                strong="Visual Studio Code"
-                p="Editor de texto"
-              />
-
-              <AppsCards
-                style={{ background: '#00b95420' }}
-                src="/icons/spotify-icon.svg"
-                strong="Spotify"
-                p="Streaming de música"
-              />
-
-              <AppsCards
-                style={{ background: '#2b2b2b' }}
-                src="/icons/obs-icon.svg"
-                strong="OBS Studio"
-                p="Streaming e gravações"
-              />
-
-              <AppsCards
-                style={{ background: '#404ee220' }}
-                src="/icons/discord-icon.svg"
-                strong="Discord"
-                p="Comunicação"
-              />
-
-              <AppsCards
-                style={{ background: '#2b2b2b' }}
-                src="/icons/figma-1.svg"
-                strong="Figma"
-                p="Criação de protótipos"
-              />
-
-              <AppsCards
-                style={{ background: '#e1e1e6' }}
-                src="/icons/notion-2.svg"
-                strong="Notion"
-                p="Organização"
-              />
-
-              <AppsCards
-                style={{ background: '#ff6c3730' }}
-                src="/icons/postman.svg"
-                strong="Postman"
-                p="Testes de API"
-              />
-            </div>
-          </TabsContent>
-
-          <TabsContent value="web">
-            <div>
-              <AppsCards
-                style={{ background: '#e1e1e630' }}
-                src="/icons/minimal-tab-clock.jpg"
-                strong="Minimal New Tab Clock"
-                p="Relógio em nova aba Chrome"
-              />
-
-              <AppsCards
-                style={{ background: '#189c9930' }}
-                src="/icons/coolors-icon.png"
-                strong="Coolors"
-                p="Paletas de cores"
-              />
-
-              <AppsCards
-                style={{ background: '#e1e1e6' }}
-                src="/icons/fonts-google.svg"
-                strong="Google Fonts"
-                p="Fontes para projetos"
-              />
-
-              <AppsCards
-                style={{ background: '#e1e1e620' }}
-                src="/icons/svg-export.jpg"
-                strong="SVG Exports"
-                p="Exportação de assets de websites"
-              />
-
-              <AppsCards
-                style={{ background: '#189c9920' }}
-                src="/icons/grammarly-icon.svg"
-                strong="Grammarly"
-                p="Correção de ortografia integrado a sistemas"
-              />
-
-              <AppsCards
-                style={{ background: '#47a7671f' }}
-                src="/icons/jsonviewer.png"
-                strong="JSON Viewer"
-                p="Visualização de JSON no browser"
-              />
-
-              <AppsCards
-                style={{ background: '#9c188653' }}
-                src="/icons/unnamed.jpg"
-                strong="CSS Peeper"
-                p="Visualização de CSS de websites"
-              />
-            </div>
-          </TabsContent>
-        </TabsRoot>
-      </Container>
+      </ContainerBox>
     </>
   )
 }

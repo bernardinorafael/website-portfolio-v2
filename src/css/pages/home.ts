@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const Container = styled.main`
   margin: 4rem auto 3rem;
@@ -47,7 +47,7 @@ export const Container = styled.main`
       color: ${({ theme }) => theme.colors.background[400]};
       display: flex;
       flex: 1;
-      gap: 0.225rem;
+      gap: 0.5rem;
       margin-top: 2rem;
       outline: none;
       padding: 0.225rem;
@@ -69,8 +69,6 @@ export const ProjectsContainer = styled.section`
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(1, 1fr);
-
-  /* &:has(div:hover) div:not(:hover) {} */
 `
 
 export const Project = styled.div`

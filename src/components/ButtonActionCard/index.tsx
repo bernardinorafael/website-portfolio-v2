@@ -1,27 +1,30 @@
 import Link from 'next/link'
-import { GithubLogo } from 'phosphor-react'
+import { GithubLogo, LinkSimple } from 'phosphor-react'
+import Tooltip from '../../primitives/Tooltip'
 import { Container } from './styles'
-import * as TooltipComponent from '@radix-ui/react-tooltip'
-import Tooltip from '../Tooltip'
 
 type ButtonActionCardProps = {
   svnUrl: string
+  hasLink?: boolean
+  homepage?: string
 }
 
-function ButtonActionCard({ svnUrl }: ButtonActionCardProps) {
+export default function ButtonActionCard(props: ButtonActionCardProps) {
   return (
     <Container>
-      <TooltipComponent.Root>
-        <TooltipComponent.Trigger asChild>
-          <Link rel="external" target="_blank" href={svnUrl}>
-            <GithubLogo size={20} weight="fill" />
-          </Link>
-        </TooltipComponent.Trigger>
+      <Tooltip render="Ver no GitHub">
+        <Link rel="external" target="_blank" href={props.svnUrl}>
+          <GithubLogo size={20} weight="fill" />
+        </Link>
+      </Tooltip>
 
-        <Tooltip content="Acessar GitHub" />
-      </TooltipComponent.Root>
+      {props.hasLink && (
+        <Tooltip render="Ver online">
+          <Link rel="external" target="_blank" href={String(props.homepage)}>
+            <LinkSimple size={20} weight="fill" />
+          </Link>
+        </Tooltip>
+      )}
     </Container>
   )
 }
-
-export default ButtonActionCard

@@ -1,10 +1,9 @@
 /* eslint-disable camelcase */
-import * as TooltipComponent from '@radix-ui/react-tooltip'
 import { format, formatDistanceToNow } from 'date-fns'
 import ptBR from 'date-fns/locale/pt-BR'
-import * as Icon from 'phosphor-react'
+import { Circle } from 'phosphor-react'
+import Tooltip from '../../primitives/Tooltip'
 import ButtonActionCard from '../ButtonActionCard'
-import Tooltip from '../Tooltip'
 import { Container, IconHighlight } from './styles'
 
 interface CardProjectProps {
@@ -17,54 +16,47 @@ interface CardProjectProps {
   homepage: string
 }
 
-function CardProject({
-  name,
-  topics,
-  svn_url,
-  language,
-  homepage,
-  created_at,
-  description,
-}: CardProjectProps) {
-  const createdAt = formatDistanceToNow(new Date(created_at), {
+export default function CardProject(props: CardProjectProps) {
+  const createdAt = formatDistanceToNow(new Date(props.created_at), {
     addSuffix: true,
     locale: ptBR,
   })
 
-  const createdDateFormatted = format(new Date(created_at), "d 'de' LLLL 'às' HH:mm", {
-    locale: ptBR,
-  })
+  const createdDateFormatted = format(
+    new Date(props.created_at),
+    "d 'de' LLLL 'às' HH:mm",
+    { locale: ptBR },
+  )
 
   return (
     <Container>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <strong>{name}</strong>
-        <ButtonActionCard svnUrl={svn_url} />
+        <strong>{props.name}</strong>
+        <ButtonActionCard
+          hasLink={!!props.homepage}
+          homepage={props.homepage}
+          svnUrl={props.svn_url}
+        />
       </div>
 
-      <span>{description}</span>
+      <span>{props.description}</span>
       <div>
-        {topics[0] ? <span>{topics[0]}</span> : null}
-        {topics[1] ? <span>{topics[1]}</span> : null}
-        {topics[2] ? <span>{topics[2]}</span> : null}
-        {topics[3] ? <span>{topics[3]}</span> : null}
+        {props.topics[0] ? <span>{props.topics[0]}</span> : null}
+        {props.topics[1] ? <span>{props.topics[1]}</span> : null}
+        {props.topics[2] ? <span>{props.topics[2]}</span> : null}
+        {props.topics[3] ? <span>{props.topics[3]}</span> : null}
       </div>
 
       <footer>
-        <IconHighlight variant={language}>
-          <Icon.Circle weight="fill" />
-          {language}
+        <IconHighlight variant={props.language}>
+          <Circle weight="fill" />
+          {props.language}
         </IconHighlight>
 
-        <TooltipComponent.Root>
-          <TooltipComponent.Trigger asChild>
-            <span>{`Criado ${createdAt}`}</span>
-          </TooltipComponent.Trigger>
-          <Tooltip content={createdDateFormatted} />
-        </TooltipComponent.Root>
+        <Tooltip render={createdDateFormatted}>
+          <span>{`Criado ${createdAt}`}</span>
+        </Tooltip>
       </footer>
     </Container>
   )
 }
-
-export default CardProject

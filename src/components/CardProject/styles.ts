@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const Container = styled.div`
   background: ${({ theme }) => theme.colors.background[800]};
@@ -76,7 +76,7 @@ export const Container = styled.div`
 `
 
 interface IconHighlightProps {
-  variant?: "TypeScript" | "JavaScript" | string
+  variant?: 'TypeScript' | 'JavaScript' | string
 }
 
 export const IconHighlight = styled.span<IconHighlightProps>`
@@ -85,7 +85,7 @@ export const IconHighlight = styled.span<IconHighlightProps>`
 
   svg {
     color: ${(props) =>
-      props.variant === "TypeScript"
+      props.variant === 'TypeScript'
         ? props.theme.colors.red[300]
         : props.theme.colors.green[300]};
   }

@@ -1,13 +1,13 @@
-import * as Popover from "@radix-ui/react-popover"
-import "animate.css"
-import Image from "next/image"
-import Link from "next/link"
-import { useRouter } from "next/router"
-import { User } from "phosphor-react"
-import { useState } from "react"
-import ButtonToggleTheme from "../ButtonToggleTheme"
-import PopoverContact from "../PopoverContact"
-import { ActiveLinkNavbar, Button, Container } from "./styles"
+import * as Popover from '@radix-ui/react-popover'
+import 'animate.css'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import { User } from 'phosphor-react'
+import { useState } from 'react'
+import ButtonToggleTheme from '../ButtonToggleTheme'
+import PopoverContact from '../PopoverContact'
+import { ActiveLinkNavbar, Button, Container } from './styles'
 
 function Header() {
   const [open, setOpen] = useState<boolean>(false)
@@ -40,7 +40,7 @@ function Header() {
           <Popover.Root open={open} onOpenChange={setOpen}>
             <Popover.Trigger asChild>
               <Button>
-                <User size={16} weight="regular" />
+                <User size={20} />
               </Button>
             </Popover.Trigger>
 

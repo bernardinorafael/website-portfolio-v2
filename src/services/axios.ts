@@ -1,5 +1,5 @@
-import axios from "axios"
+import axios from 'axios'
 
 export const app = axios.create({
-  baseURL: "https://api.github.com/users/bernardinorafael",
+  baseURL: 'https://api.github.com/users/bernardinorafael',
 })

@@ -1,27 +1,35 @@
-import Image from "next/image"
-import { CSSProperties } from "react"
-import { Container } from "./styles"
+import Image from 'next/image'
+import Link from 'next/link'
+import { ArrowSquareOut } from 'phosphor-react'
+import { AppCardBox, Heading, ImageBox } from './styles'
 
 interface AppsCardProps {
-  src: string
-  style: CSSProperties
-  strong: string
-  p?: string
+  imageUrl: string
+  title: string
+  href: string
+  textHref: string
+  description: string
 }
 
-function AppsCards({ p, src, strong, style }: AppsCardProps) {
+export default function AppCard(props: AppsCardProps) {
   return (
-    <Container>
-      <div style={style}>
-        <Image height={30} width={30} src={src} alt="" />
-      </div>
+    <AppCardBox>
+      <Heading>
+        <ImageBox>
+          <Image fill src={props.imageUrl} alt="" />
+        </ImageBox>
 
-      <div>
-        <strong>{strong}</strong>
-        <p>{p}</p>
-      </div>
-    </Container>
+        <div>
+          <strong>{props.title}</strong>
+
+          <Link rel="external" target="_blank" href={props.href}>
+            <em>{props.textHref}</em>
+            <ArrowSquareOut size={18} />
+          </Link>
+        </div>
+      </Heading>
+
+      <span>{props.description}</span>
+    </AppCardBox>
   )
 }
-
-export default AppsCards
