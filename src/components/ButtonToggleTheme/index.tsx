@@ -1,13 +1,13 @@
-import { ButtonHTMLAttributes, useContext, useState } from 'react'
-import { GlobalContext } from '../../context/GlobalContext'
+import { ButtonHTMLAttributes, useState } from 'react'
 
 import { MoonStars, Sun } from 'phosphor-react'
+import { useGlobalContext } from '../../hooks/useGlobalContext'
 import { Button } from './styles'
 
 interface ButtonToggleThemeProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
 
 function ButtonToggleTheme({ ...props }: ButtonToggleThemeProps) {
-  const { toggleTheme } = useContext(GlobalContext)
+  const { toggleTheme } = useGlobalContext()
   const [toggleButtonIcon, setToggleButtonIcon] = useState(false)
 
   function handleToggleThemeButton() {
