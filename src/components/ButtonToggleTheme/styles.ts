@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const Button = styled.button`
   align-items: center;
-  border-radius: ${({ theme }) => theme.radii.sm};
+  border-radius: 10px;
   background: transparent;
   border: none;
   display: flex;

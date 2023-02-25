@@ -51,7 +51,7 @@ export default function HomeScreen({ repositories }: HomeScreenProps) {
 
       <Container>
         <section>
-          <Title>Hello! I&apos;m Rafael</Title>
+          <Title>Olá! Sou Rafael!</Title>
           <p>
             Nascido Criciúma, uma cidade na região sul de Santa Catarina e atualmente
             residindo em Sobral, no Ceará. Desde criança, fui exposto à tecnologia

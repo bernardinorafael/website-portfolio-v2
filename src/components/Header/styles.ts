@@ -1,9 +1,9 @@
-import styled from "styled-components"
+import styled, { css } from 'styled-components'
 
 export const Container = styled.header`
   background: ${({ theme }) => theme.colors.background[900]};
   border-bottom: 1px solid ${({ theme }) => theme.colors.background[700]};
-  height: 3rem;
+  height: 3.5rem;
   inset: 0;
   position: fixed;
   z-index: 100;
@@ -59,41 +59,33 @@ interface ActiveLinkNavbarProps {
 
 export const ActiveLinkNavbar = styled.a<ActiveLinkNavbarProps>`
   background: transparent;
-  color: ${(props) =>
-    props.asPath === props.href
-      ? props.theme.colors.white
-      : props.theme.colors.background[300]};
-
+  color: ${(props) => props.theme.colors.white};
   font-size: ${({ theme }) => theme.fontSize.sm};
   font-weight: ${({ theme }) => theme.fontWeight.semibold};
-  padding: 0.125rem 0.5rem;
+  padding: 0.5rem 0.875rem;
+  border-radius: 10px;
   position: relative;
 
-  &::after {
-    bottom: -14px;
-    background: ${(props) =>
-      props.asPath === props.href ? props.theme.colors.violet[200] : "transparent"};
-    content: "";
-    height: 2px;
-    left: 0;
-    position: absolute;
-    width: 100%;
-  }
-
   &:hover {
-    color: ${({ theme }) => theme.colors.white};
-    transition: color 0.2s;
+    background-color: ${(props) => props.theme.colors.background[700]};
+    transition: background-color 0.2s;
   }
 
   &:focus {
-    box-shadow: 0 0 0 1px ${({ theme }) => theme.colors.violet[200]};
+    box-shadow: 0 0 0 2px ${({ theme }) => theme.colors.violet[200]};
   }
+
+  ${(props) =>
+    props.asPath === props.href &&
+    css`
+      background-color: ${(props) => props.theme.colors.background[700]};
+    `}
 `
 
 export const Button = styled.button`
   align-items: center;
   background: transparent;
-  border-radius: ${({ theme }) => theme.radii.sm};
+  border-radius: 10px;
   border: none;
   display: flex;
   height: 2rem;

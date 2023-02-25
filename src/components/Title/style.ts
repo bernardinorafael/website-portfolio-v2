@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const Strong = styled.strong`
   border-bottom: 2px solid ${({ theme }) => theme.colors.background[700]};
