@@ -69,7 +69,7 @@ export const dark = {
 
   fontFamily: {
     default: 'Inter Tight, sans-serif',
-    mono: 'IBM Plex Mono, monospace',
+    mono: 'JetBrains Mono, monospace',
   },
 
   fontWeight: {

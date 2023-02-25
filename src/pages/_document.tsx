@@ -15,8 +15,7 @@ export default class MyDocument extends Document {
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: (App) => (props) =>
-            sheet.collectStyles(<App {...props} />),
+          enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />),
         })
 
       const initialProps = await Document.getInitialProps(ctx)
@@ -40,9 +39,10 @@ export default class MyDocument extends Document {
             crossOrigin="anonymous"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@600&family=Inter+Tight:wght@300;400;500;600;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@600&family=Inter+Tight:wght@300;400;500;600;700&JetBrains+Mono:wght@600&display=swap"
             rel="stylesheet"
           />
+
           <meta
             name="description"
             content="Website portfólio Rafael Bernardino, desenvolvedor web com foco em TypeScript e Next.js."
