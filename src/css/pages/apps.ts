@@ -32,4 +32,8 @@ export const AppsContentBox = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
   width: 100%;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
 `
